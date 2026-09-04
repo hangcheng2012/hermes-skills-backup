@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>6 台工艺泵流量计算过程说明</title>
+</head>
+<body style="font-family:SimHei,Arial,sans-serif;background:#fff;margin:0;padding:0;">
+
+<div style="background:#0d47a1;color:#fff;padding:15px 20px;border-bottom:4px solid #000;">
+<h1 style="margin:0;font-size:20px;">DETDA 法年产 10 吨 PU 弹性体装置 — 6 台工艺泵流量计算过程</h1>
+<p style="margin:6px 0 0 0;font-size:12px;">工艺：DETDA 预聚物法（PTMG-1000 / TDI 80-20 / DETDA 液体扩链剂）｜ 规模：10 t/a ｜ 300d × 1 釜/d × 5 釜/周 = 33.3 kg/釜 ｜ 编制日期：2026-06-19</p>
+</div>
+
+<div style="padding:20px;">
+
+<h2 style="color:#E65100;border-bottom:2px solid #E65100;padding-bottom:6px;">一、单釜物料基础数据（计算输入）</h2>
+
+<h3 style="color:#0d47a1;margin-top:15px;">1.1 配方（PTMG : TDI : DETDA = 100 : 20.4 : 11.0）</h3>
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:20px;">
+<thead>
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999;padding:8px;text-align:center;">物料</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">配比 (g/100g PTMG)</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">密度 g/cm³</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">单釜 kg (33.3 kg PU)</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;background:#FFE082;">单釜 L（kg/密度）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #999;padding:6px;"><b>PTMG-1000</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">100.0</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">1.00</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">25.40</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>25.40</b></td>
+</tr>
+<tr>
+<td style="border:1px solid #999;padding:6px;"><b>TDI 80/20</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">20.4</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">1.22</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">5.18</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>4.25</b></td>
+</tr>
+<tr>
+<td style="border:1px solid #999;padding:6px;"><b>DETDA ⭐</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">11.0</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">1.02</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">2.79</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>2.74</b></td>
+</tr>
+<tr style="background:#FFE0B2;">
+<td style="border:1px solid #999;padding:6px;"><b>合计 PU 弹性体</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">131.4</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">~1.05</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;"><b>33.37</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>31.78</b></td>
+</tr>
+</tbody>
+</table>
+
+<h3 style="color:#0d47a1;margin-top:15px;">1.2 工艺时间</h3>
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:20px;">
+<thead>
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999;padding:8px;text-align:center;">工序</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">时间</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">依据</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="border:1px solid #999;padding:6px;">V-201 PTMG 脱水</td><td style="border:1px solid #999;padding:6px;text-align:center;">2 h</td><td style="border:1px solid #999;padding:6px;">120°C + 10 mbar 含水降至 &lt;0.05%</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;">R-301 预聚反应</td><td style="border:1px solid #999;padding:6px;text-align:center;">1.5-2 h</td><td style="border:1px solid #999;padding:6px;">DETDA 反应快 30 倍（80°C）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;">V-401 脱气</td><td style="border:1px solid #999;padding:6px;text-align:center;">30-45 min</td><td style="border:1px solid #999;padding:6px;">脱 CO₂ + DETDA 蒸汽（10 mbar 真空）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;">MX-601 混合</td><td style="border:1px solid #999;padding:6px;text-align:center;">30 s</td><td style="border:1px solid #999;padding:6px;">静态混合（极短停留）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;">P-601 浇注</td><td style="border:1px solid #999;padding:6px;text-align:center;">5 min</td><td style="border:1px solid #999;padding:6px;">模具填充 + 凝胶</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;">700 后熟化</td><td style="border:1px solid #999;padding:6px;text-align:center;">16 h</td><td style="border:1px solid #999;padding:6px;">PU 弹性体后熟化</td></tr>
+</tbody>
+</table>
+
+<h2 style="color:#E65100;border-bottom:2px solid #E65100;padding-bottom:6px;">二、流量计算总原则</h2>
+<p style="margin:8px 0;font-size:12px;line-height:1.8;">
+<b>基本公式：Q = V ÷ t</b>（V=单釜体积 L，t=投料时间 h）<br><br>
+设计原则：<br>
+1. <b>投料时间合理</b>：3-5 min（避免反应剧烈或等待过久）<br>
+2. <b>与上下游泵匹配</b>：串联流量一致<br>
+3. <b>考虑介质黏度</b>：高黏度 500-2000 cP 用齿轮泵偏小流量<br>
+4. <b>考虑 DETDA 反应活性</b>：必须<b>慢加</b>避免剧烈放热（DETDA 比 MOCA 快 30 倍）<br>
+5. <b>单釜体积计算</b>：V = m ÷ ρ（质量 ÷ 密度）<br>
+6. <b>校核</b>：扬程 10-15m 足够克服管路 + 设备位差 + 阀门压降
+</p>
+
+<h2 style="color:#E65100;border-bottom:2px solid #E65100;padding-bottom:6px;">三、6 台工艺泵流量计算（详细过程）</h2>
+
+<!-- P-101 -->
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:20px;">
+<thead>
+<tr style="background:#FFE0B2;">
+<th colspan="2" style="border:1px solid #999;padding:8px;text-align:left;"><b>P-101 PTMG 转料泵（V-101 → V-201）</b></th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="border:1px solid #999;padding:6px;width:25%;background:#E1F5FE;"><b>流量公式</b></td><td style="border:1px solid #999;padding:6px;">Q = V ÷ t</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>单釜体积</b></td><td style="border:1px solid #999;padding:6px;">V_PTMG = m ÷ ρ = 25.4 kg ÷ 1.00 g/cm³ = <b>25.4 L</b></td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>投料时间</b></td><td style="border:1px solid #999;padding:6px;">t = <b>3 min = 0.05 h</b>（PTMG 无化学反应，3 min 投料合理）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#FFE082;"><b>流量计算</b></td><td style="border:1px solid #999;padding:6px;background:#FFE082;">Q = 25.4 ÷ 0.05 = <b>508 L/h ≈ 0.5 m³/h</b></td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>选型</b></td><td style="border:1px solid #999;padding:6px;">齿轮泵 304SS 0.5 m³/h 10m 0.75 kW</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>校核</b></td><td style="border:1px solid #999;padding:6px;">扬程 10m = 管路 8m + 设备位差 1m + 阀门 1m ✅</td></tr>
+</tbody>
+</table>
+
+<!-- P-201 -->
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:20px;">
+<thead>
+<tr style="background:#FFE0B2;">
+<th colspan="2" style="border:1px solid #999;padding:8px;text-align:left;"><b>P-201 合格 PTMG 泵（V-201 → R-301）</b></th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>流量公式</b></td><td style="border:1px solid #999;padding:6px;">Q = V ÷ t</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>单釜体积</b></td><td style="border:1px solid #999;padding:6px;">V_PTMG = <b>25.4 L</b>（合格 PTMG，含水 &lt;0.05%）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>投料时间</b></td><td style="border:1px solid #999;padding:6px;">t = <b>3 min = 0.05 h</b>（PTMG 进入 R-301 后需升温平衡 5-10 min）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#FFE082;"><b>流量计算</b></td><td style="border:1px solid #999;padding:6px;background:#FFE082;">Q = 25.4 ÷ 0.05 = <b>508 L/h ≈ 0.5 m³/h</b></td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>选型</b></td><td style="border:1px solid #999;padding:6px;">齿轮泵 304SS 0.5 m³/h 10m 0.75 kW（耐温型 120°C）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>匹配</b></td><td style="border:1px solid #999;padding:6px;">与 P-101 流量一致（V-101→V-201→R-301 同流量）✅</td></tr>
+</tbody>
+</table>
+
+<!-- P-301 -->
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:20px;">
+<thead>
+<tr style="background:#FFE0B2;">
+<th colspan="2" style="border:1px solid #999;padding:8px;text-align:left;"><b>P-301 预聚体泵（R-301 → V-401）⭐ 高粘度</b></th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>流量公式</b></td><td style="border:1px solid #999;padding:6px;">Q = V ÷ t</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>单釜体积</b></td><td style="border:1px solid #999;padding:6px;">V_预聚体 = (m_PTMG + m_TDI) ÷ ρ_PU = (25.4 + 5.18) ÷ 1.05 = <b>29.13 L</b></td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>投料时间</b></td><td style="border:1px solid #999;padding:6px;">t = <b>3.5 min = 0.058 h</b>（预聚体黏度 500-2000 cP 高黏度，需稍慢）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#FFE082;"><b>流量计算</b></td><td style="border:1px solid #999;padding:6px;background:#FFE082;">Q = 29.13 ÷ 0.058 = <b>502 L/h ≈ 0.5 m³/h</b></td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>选型</b></td><td style="border:1px solid #999;padding:6px;"><b>齿轮泵（高粘度型）</b> 304SS 0.5 m³/h 10m <b>1.5 kW</b>（功率从 0.75 → 1.5）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>功率放大原因</b></td><td style="border:1px solid #999;padding:6px;">高黏度 500-2000 cP 需要更大扭矩，齿轮泵功率从 0.75 提升到 1.5 kW</td></tr>
+</tbody>
+</table>
+
+<!-- P-401 -->
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:20px;">
+<thead>
+<tr style="background:#FFE0B2;">
+<th colspan="2" style="border:1px solid #999;padding:8px;text-align:left;"><b>P-401 脱气预聚体泵（V-401 → MX-601）</b></th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>流量公式</b></td><td style="border:1px solid #999;padding:6px;">Q = V ÷ t</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>单釜体积</b></td><td style="border:1px solid #999;padding:6px;">V_脱气预聚体 = <b>29.13 L</b>（脱气后体积不变）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>投料时间</b></td><td style="border:1px solid #999;padding:6px;">t = <b>3.5 min = 0.058 h</b>（与 P-301 同步，串联流量匹配）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#FFE082;"><b>流量计算</b></td><td style="border:1px solid #999;padding:6px;background:#FFE082;">Q = 29.13 ÷ 0.058 = <b>502 L/h ≈ 0.5 m³/h</b></td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>选型</b></td><td style="border:1px solid #999;padding:6px;">齿轮泵 304SS 0.5 m³/h <b>15m</b> 1.5 kW</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>扬程放大原因</b></td><td style="border:1px solid #999;padding:6px;">V-401 10 mbar 真空入口 + 远距离输送（扬程从 10m → 15m）</td></tr>
+</tbody>
+</table>
+
+<!-- P-501 -->
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:20px;">
+<thead>
+<tr style="background:#FFE0B2;">
+<th colspan="2" style="border:1px solid #999;padding:8px;text-align:left;"><b>P-501 DETDA 投料泵（V-103 → MX-601）⭐ DETDA 体系关键</b></th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>流量公式</b></td><td style="border:1px solid #999;padding:6px;">Q = V ÷ t（DETDA 必须<b>慢加</b>）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>单釜体积</b></td><td style="border:1px solid #999;padding:6px;">V_DETDA = m ÷ ρ = 2.79 ÷ 1.02 = <b>2.74 L</b></td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>投料时间</b></td><td style="border:1px solid #999;padding:6px;">t = <b>3.3 min = 0.055 h</b>（DETDA 反应活性是 MOCA 30 倍，必须慢加）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#FFE082;"><b>流量计算</b></td><td style="border:1px solid #999;padding:6px;background:#FFE082;">Q = 2.74 ÷ 0.055 = <b>49.8 L/h ≈ 0.05 m³/h</b></td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>选型</b></td><td style="border:1px solid #999;padding:6px;">齿轮泵 304SS <b>0.05 m³/h</b> 10m <b>0.37 kW</b>（极小流量齿轮泵）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;color:#C62828;"><b>关键设计</b></td><td style="border:1px solid #999;padding:6px;color:#C62828;"><b>DETDA 反应活性是 MOCA 30 倍</b>，必须慢加避免局部反应放热剧增 → 流量 0.05 m³/h（远小于 P-101 的 0.5 m³/h）</td></tr>
+</tbody>
+</table>
+
+<!-- P-601 -->
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:20px;">
+<thead>
+<tr style="background:#FFE0B2;">
+<th colspan="2" style="border:1px solid #999;padding:8px;text-align:left;"><b>P-601 浇注计量泵（MX-601 → P-601 模具）⭐ 柱塞泵</b></th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>流量公式</b></td><td style="border:1px solid #999;padding:6px;">Q = V ÷ t（浇注需要精确计量）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>单釜体积</b></td><td style="border:1px solid #999;padding:6px;">V_PU反应料 = m ÷ ρ = 33.37 ÷ 1.05 = <b>31.78 L</b></td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>浇注时间</b></td><td style="border:1px solid #999;padding:6px;">t = <b>5 min = 0.083 h</b>（模具填充 + 凝胶开始）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#FFE082;"><b>理论流量</b></td><td style="border:1px solid #999;padding:6px;background:#FFE082;">Q = 31.78 ÷ 0.083 = <b>382 L/h ≈ 0.4 m³/h</b></td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#FFE082;"><b>设计取值</b></td><td style="border:1px solid #999;padding:6px;background:#FFE082;"><b>0.6 m³/h</b> ⭐（含 1.5 倍系数：模具填充余量 + 柱塞泵标准规格）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>选型</b></td><td style="border:1px solid #999;padding:6px;"><b>柱塞计量泵</b> 316L 0.6 m³/h <b>5 bar</b> 1.5 kW</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;background:#E1F5FE;"><b>柱塞泵选型理由</b></td><td style="border:1px solid #999;padding:6px;">①精确计量 ±1%（浇注配比关键）②高压 5 bar（模具填充阻力）③316L 高纯度</td></tr>
+</tbody>
+</table>
+
+<h2 style="color:#E65100;border-bottom:2px solid #E65100;padding-bottom:6px;">四、6 台泵流量汇总</h2>
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:20px;">
+<thead>
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999;padding:8px;text-align:center;">泵</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">介质</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">单釜 L</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">投料时间</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">流量计算</th>
+<th style="border:1px solid #999;padding:8px;background:#FFE082;text-align:center;">流量 m³/h</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">泵型</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">功率 kW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #999;padding:6px;text-align:center;"><b>P-101</b></td>
+<td style="border:1px solid #999;padding:6px;">PTMG</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">25.4</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">3 min</td>
+<td style="border:1px solid #999;padding:6px;">25.4÷0.05=508</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>0.5</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">齿轮泵</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">0.75</td>
+</tr>
+<tr>
+<td style="border:1px solid #999;padding:6px;text-align:center;"><b>P-201</b></td>
+<td style="border:1px solid #999;padding:6px;">合格 PTMG</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">25.4</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">3 min</td>
+<td style="border:1px solid:#999;padding:6px;">25.4÷0.05=508</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>0.5</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">齿轮泵</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">0.75</td>
+</tr>
+<tr>
+<td style="border:1px solid #999;padding:6px;text-align:center;"><b>P-301</b> ⭐</td>
+<td style="border:1px solid #999;padding:6px;">PU 预聚体</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">29.13</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">3.5 min</td>
+<td style="border:1px solid #999;padding:6px;">29.13÷0.058=502</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>0.5</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">齿轮泵(高粘度)</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">1.5</td>
+</tr>
+<tr>
+<td style="border:1px solid #999;padding:6px;text-align:center;"><b>P-401</b></td>
+<td style="border:1px solid #999;padding:6px;">脱气预聚体</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">29.13</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">3.5 min</td>
+<td style="border:1px solid #999;padding:6px;">29.13÷0.058=502</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>0.5</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">齿轮泵</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">1.5</td>
+</tr>
+<tr>
+<td style="border:1px solid #999;padding:6px;text-align:center;"><b>P-501</b> ⭐</td>
+<td style="border:1px solid #999;padding:6px;">DETDA</td>
+<td style="border:1px solid:#999;padding:6px;text-align:center;">2.74</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">3.3 min</td>
+<td style="border:1px solid #999;padding:6px;">2.74÷0.055=50</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>0.05</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">齿轮泵(极小流量)</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">0.37</td>
+</tr>
+<tr>
+<td style="border:1px solid #999;padding:6px;text-align:center;"><b>P-601</b> ⭐</td>
+<td style="border:1px solid #999;padding:6px;">PU 反应料</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">31.78</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">5 min</td>
+<td style="border:1px solid #999;padding:6px;">31.78÷0.083=382×1.5</td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>0.6</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;"><b>柱塞计量泵</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;">1.5</td>
+</tr>
+</tbody>
+</table>
+
+<h2 style="color:#E65100;border-bottom:2px solid #E65100;padding-bottom:6px;">五、流量设计的关键决策</h2>
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:20px;">
+<thead>
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999;padding:8px;text-align:center;">决策</th>
+<th style="border:1px solid #999;padding:8px;text-align:left;">依据</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="border:1px solid #999;padding:6px;"><b>P-101/P-201 流量 0.5 m³/h</b></td><td style="border:1px solid #999;padding:6px;">PTMG 25.4 L/3 min = 508 L/h ≈ 0.5 m³/h（无反应，3 min 投料合理）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;"><b>P-301 流量 0.5 m³/h，功率 1.5 kW</b></td><td style="border:1px solid #999;padding:6px;">预聚体 29.13 L/3.5 min = 502 L/h ≈ 0.5 m³/h（高黏度需大功率）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;"><b>P-401 流量 0.5 m³/h，扬程 15m</b></td><td style="border:1px solid #999;padding:6px;">脱气预聚体 29.13 L/3.5 min = 502 L/h（V-401 10 mbar 真空入口需更大扬程）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;color:#C62828;"><b>P-501 流量 0.05 m³/h ⭐</b></td><td style="border:1px solid #999;padding:6px;color:#C62828;">DETDA 2.74 L/3.3 min = 50 L/h ≈ 0.05 m³/h（DETDA 反应活性是 MOCA 30 倍，必须慢加）</td></tr>
+<tr><td style="border:1px solid #999;padding:6px;color:#C62828;"><b>P-601 流量 0.6 m³/h + 5 bar ⭐</b></td><td style="border:1px solid #999;padding:6px;color:#C62828;">PU 31.78 L/5 min = 382 L/h ≈ 0.6 m³/h（含 1.5 倍系数 + 柱塞泵精确计量 ±1% + 5 bar 模具填充）</td></tr>
+</tbody>
+</table>
+
+<h2 style="color:#E65100;border-bottom:2px solid #E65100;padding-bottom:6px;">六、流量汇总对比</h2>
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:20px;">
+<thead>
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999;padding:8px;text-align:center;">泵</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;background:#FFE082;">流量 m³/h</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">介质</th>
+<th style="border:1px solid #999;padding:8px;text-align:center;">流量计算依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #999;padding:6px;text-align:center;"><b>流量最大</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>P-601 (0.6)</b></td>
+<td style="border:1px solid #999;padding:6px;">PU 反应料（柱塞泵）</td>
+<td style="border:1px solid #999;padding:6px;">浇注 5min + 1.5 倍系数</td>
+</tr>
+<tr>
+<td style="border:1px solid #999;padding:6px;text-align:center;"><b>标准流量</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>P-101/201/301/401 (0.5)</b></td>
+<td style="border:1px solid #999;padding:6px;">PTMG/预聚体/脱气预聚体</td>
+<td style="border:1px solid #999;padding:6px;">3-3.5 min 投料</td>
+</tr>
+<tr>
+<td style="border:1px solid #999;padding:6px;text-align:center;"><b>流量最小</b></td>
+<td style="border:1px solid #999;padding:6px;text-align:center;background:#FFE082;"><b>P-501 (0.05)</b></td>
+<td style="border:1px solid #999;padding:6px;">DETDA（液体扩链剂）</td>
+<td style="border:1px solid #999;padding:6px;">DETDA 反应快 30 倍，必须慢加</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<div style="background:#0d47a1;color:#fff;padding:8px 20px;font-size:11px;">
+<table style="width:100%;color:#fff;font-size:11px;">
+<tr>
+<td style="padding:4px;">项目：DETDA 法 PU 弹性体中试装置</td>
+<td style="padding:4px;">文件：6 台工艺泵流量计算过程</td>
+<td style="padding:4px;text-align:right;">编制日期：2026-06-19</td>
+</tr>
+</table>
+</div>
+
+</body>
+</html>

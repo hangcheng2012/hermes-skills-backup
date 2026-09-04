@@ -1,0 +1,8 @@
+# Sir 的备份规则 (skills-github-backup.sh 自动维护)
+# 排除历史备份和临时文件
+*.bak-*
+*.pre-merged-*
+*.bak
+__pycache__/
+*.pyc
+.DS_Store

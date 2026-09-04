@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>PDI 法年产 10 吨聚氨酯弹性体装置 PFD — 预聚物法</title>
+<style>
+body{font-family:SimHei,Arial,sans-serif;background:#fff;margin:0;padding:14px;color:#000;}
+.titlebar{background:#0d47a1;color:#fff;padding:10px 16px;border:2px solid #000;}
+.titlebar h1{margin:0;font-size:18px;}
+.titlebar p{margin:4px 0 0 0;font-size:12px;}
+.area{background:#f0f5ff;border:1.5px solid #0d47a1;margin:10px 0;padding:8px;}
+.area h2{margin:0 0 4px 0;font-size:14px;color:#0d47a1;border-bottom:1px dashed #0d47a1;padding-bottom:2px;}
+table{width:100%;border-collapse:collapse;font-size:12px;margin:6px 0;}
+th,td{border:1px solid #333;padding:4px 8px;text-align:center;vertical-align:middle;}
+th{background:#bbdefb;font-weight:bold;}
+.equip{background:#fff8e1;border:1.5px solid #ff6f00;display:inline-block;padding:4px 10px;margin:2px;font-size:12px;}
+.equip-id{font-weight:bold;color:#c62828;}
+.stream{border-top:1.5px solid #000;border-bottom:1.5px solid #000;padding:2px 6px;background:#e3f2fd;font-size:11px;}
+.warn{background:#ffebee;border-left:4px solid #c62828;padding:6px 10px;margin:6px 0;font-size:12px;}
+.ok{background:#e8f5e9;border-left:4px solid #2e7d32;padding:6px 10px;margin:6px 0;font-size:12px;}
+.note{background:#fff3e0;border:1px dashed #ff6f00;padding:6px 10px;margin:4px 0;font-size:11px;}
+.legend{font-size:11px;background:#fafafa;border:1px solid #999;padding:6px;margin:6px 0;}
+.legend span{margin-right:14px;}
+.linemain{border-top:2px solid #000;width:60px;display:inline-block;margin-right:6px;vertical-align:middle;}
+.lineutil{border-top:2px dashed #1565c0;width:60px;display:inline-block;margin-right:6px;vertical-align:middle;}
+.linegas{border-top:2px dashed #2e7d32;width:60px;display:inline-block;margin-right:6px;vertical-align:middle;}
+</style>
+</head>
+<body>
+
+<!-- ========== 标题栏 ========== -->
+<div class="titlebar">
+<h1>PDI 法年产 10 吨聚氨酯弹性体（CPU）装置 — 工艺流程图 PFD</h1>
+<p>项目：年产 10 t/a 高性能聚氨酯弹性体中试装置 | 工艺：预聚物法（PPDI/PTMG-1000/MOCA 体系）| 规模：10 t/a | 设计阶段：基础设计 | 版本 v1.0 | 2026-06-06</p>
+</div>
+
+<!-- ========== 图例 ========== -->
+<div class="legend">
+<strong>图例：</strong>
+<span><span class="linemain"></span>主工艺物流</span>
+<span><span class="lineutil"></span>公用工程（导热油/冷冻水/真空）</span>
+<span><span class="linegas"></span>惰性气体（N₂）</span>
+<span style="border:1.5px solid #ff6f00;background:#fff8e1;padding:1px 6px;">设备位号</span>
+<span style="border:1px solid #0277bd;background:#e3f2fd;padding:1px 6px;">物流号</span>
+</div>
+
+<!-- ========== 100 单元：原料储存 ========== -->
+<div class="area">
+<h2>100 单元 — 原料储存（常压、N₂ 封）</h2>
+
+<table>
+<tr>
+<td width="20%">
+<div class="equip">
+<div class="equip-id">V-101</div>
+PTMG-1000 储罐<br>
+<small>1000 L，304SS，60°C，N₂ 封</small>
+</div>
+</td>
+<td width="20%">
+<div class="equip">
+<div class="equip-id">V-102</div>
+PPDI 储罐（甲类）<br>
+<small>200 L，316L SS，40°C，N₂ 封，避光</small>
+</div>
+</td>
+<td width="20%">
+<div class="equip">
+<div class="equip-id">V-103</div>
+MOCA 储罐（固态）<br>
+<small>100 L，304SS，120°C 熔融态</small>
+</div>
+</td>
+<td width="40%">
+<div class="note">
+<b>物料进料：</b><br>
+• PTMG-1000（聚四氢呋喃醚二醇）：CAS 25190-06-1，Mn=1000，OH 值 112 mgKOH/g<br>
+• PPDI（1,4-苯二异氰酸酯）：CAS 104-49-4，mp 96°C，纯度 ≥ 99.5%<br>
+• MOCA（3,3'-二氯-4,4'-二氨基二苯甲烷）：CAS 101-14-4，mp 107°C<br>
+• 配方：PTMG 100 / PPDI 34.6 / MOCA 12.4（NCO/OH = 1.05，扩链系数 0.95）
+</div>
+</td>
+</tr>
+</table>
+
+<p><b>物流：</b>
+<span class="stream">S-101 PTMG 60 kg/釜 60°C → V-201</span>
+<span class="stream">S-102 PPDI 20.8 kg/釜 40°C → R-301</span>
+<span class="stream">S-103 MOCA 8 kg/釜 120°C → V-501</span>
+</p>
+</div>
+
+<!-- ========== 200 单元：多元醇脱水 ========== -->
+<div class="area">
+<h2>200 单元 — 多元醇脱水（真空脱水）</h2>
+
+<table>
+<tr>
+<td width="33%">
+<div class="equip">
+<div class="equip-id">V-201</div>
+<b>多元醇脱水釜</b><br>
+500 L 搪玻璃反应釜（K-500）<br>
+锚式搅拌 80 rpm<br>
+夹套导热油加热<br>
+真空口+冷凝器+接收罐<br>
+<small>120°C / -0.095 MPa / 2~3 h</small>
+</div>
+</td>
+<td width="33%">
+<div class="equip">
+<div class="equip-id">C-201</div>
+<b>脱水冷凝器</b><br>
+列管式 5 m²，304SS<br>
+冷却水 25→40°C<br>
+<small>冷凝水蒸气 + 轻组分</small>
+</div>
+</td>
+<td width="33%">
+<div class="equip">
+<div class="equip-id">V-202</div>
+<b>凝液接收罐</b><br>
+50 L，304SS<br>
+<small>接收脱水馏出物</small>
+</div>
+</td>
+</tr>
+</table>
+
+<p><b>工艺目的：</b>脱除 PTMG-1000 中溶解水（≤ 0.05%），防止预聚反应中 -OH 与 NCO 反应生成脲键（影响预聚体规整性）<br>
+<b>操作：</b>开启真空 -0.095 MPa，缓慢升温至 120°C（避免暴沸），保持 2~3 h，釜顶冷凝水蒸气 + 轻组分 → C-201 冷凝 → V-202 接收</p>
+
+<p><b>物流：</b>
+<span class="stream">S-201 脱水后 PTMG 60 kg/釜 120°C → R-301（冷却至 60°C 后）</span>
+<span class="stream">S-202 蒸汽+轻组分 → C-201 冷凝</span>
+</p>
+</div>
+
+<!-- ========== 300 单元：预聚反应 ========== -->
+<div class="area">
+<h2>300 单元 — 预聚反应（核心单元）</h2>
+
+<table>
+<tr>
+<td width="40%">
+<div class="equip">
+<div class="equip-id">R-301</div>
+<b>预聚反应釜（核心设备）</b><br>
+500 L 不锈钢反应釜（316L SS）<br>
+框式搅拌 60 rpm + 推进式<br>
+夹套导热油加热 + 冷冻水切换<br>
+N₂ 保护 + 真空切换<br>
+测温/测压/取样口<br>
+<small>80~90°C / N₂ 封 / 0.05 MPaG<br>
+反应时间 2~3 h<br>
+NCO 含量 5~6%</small>
+</div>
+</td>
+<td width="30%">
+<div class="equip">
+<div class="equip-id">C-301</div>
+<b>回流冷凝器</b><br>
+列管式 3 m²，316L SS<br>
+冷冻水 5°C<br>
+<small>回流挥发 PPDI（少量）</small>
+</div>
+</td>
+<td width="30%">
+<div class="note">
+<b>反应方程式：</b><br>
+<i>2 OCN-C₆H₄-NCO + HO-R-OH →</i><br>
+<i>OCN-C₆H₄-NH-CO-O-R-O-CO-NH-C₆H₄-NCO</i><br>
+<br>
+<b>关键控制：</b><br>
+• N₂ 置换 O₂（防 PPDI 氧化）<br>
+• 温度 ≤ 90°C（防支化）<br>
+• 加料顺序：PTMG → PPDI（防局部 NCO 过量）<br>
+• NCO% 滴定监测（每 30 min）<br>
+• 终点 NCO% = 5.0~6.0%
+</div>
+</td>
+</tr>
+</table>
+
+<p><b>工艺目的：</b>PTMG-1000 端 -OH 与过量 PPDI 反应，生成端 -NCO 预聚体（NCO 当量 = 1.05）<br>
+<b>操作：</b>先 N₂ 置换 30 min，R-301 抽真空 -0.05 MPa 保压 30 min 试漏，N₂ 充至 0.05 MPaG；先加入脱水 PTMG-1000（60 kg，60°C），搅拌下分批加入熔融 PPDI（20.8 kg，50°C），加料时间 30~60 min；升温至 80~90°C，反应 2~3 h；每 30 min 取样测 NCO%；终点 NCO% = 5.0~6.0%</p>
+
+<p><b>物流：</b>
+<span class="stream">S-301 预聚体 80 kg/釜 80~90°C → V-401</span>
+<span class="stream">N₂-301 N₂ 0.05 MPaG → R-301 封层</span>
+</p>
+</div>
+
+<!-- ========== 400 单元：真空脱气 ========== -->
+<div class="area">
+<h2>400 单元 — 真空脱气（脱单体）</h2>
+
+<table>
+<tr>
+<td width="25%">
+<div class="equip">
+<div class="equip-id">V-401</div>
+<b>预聚体脱气罐</b><br>
+500 L，316L SS<br>
+锚式搅拌 40 rpm<br>
+夹套导热油加热<br>
++ 真空接管<br>
+<small>80°C / -0.095 MPa / 1~2 h</small>
+</div>
+</td>
+<td width="25%">
+<div class="equip">
+<div class="equip-id">C-401</div>
+<b>脱气冷凝器</b><br>
+列管式 3 m²，316L SS<br>
+冷却水 25→40°C<br>
+<small>捕集未反应 PPDI 单体</small>
+</div>
+</td>
+<td width="25%">
+<div class="equip">
+<div class="equip-id">V-402</div>
+<b>冷凝液收集罐</b><br>
+50 L，316L SS<br>
+<small>PPDI 单体回收</small>
+</div>
+</td>
+<td width="25%">
+<div class="equip">
+<div class="equip-id">O-401</div>
+<b>水环真空泵</b><br>
+50 m³/h，-0.095 MPa<br>
+配套气液分离罐 V-403<br>
+<small>PPDI 蒸气+水蒸气抽出</small>
+</div>
+</td>
+</tr>
+</table>
+
+<p><b>工艺目的：</b>脱除预聚体中未反应 PPDI 单体，制备低游离（LF）预聚体，游离 PPDI ≤ 0.1%<br>
+<b>操作：</b>预聚体转入 V-401，升温至 80°C，开启真空 -0.095 MPa，搅拌 40 rpm，保持 1~2 h；蒸出的 PPDI + 微量水蒸气经 C-401 冷凝 → V-402 收集（PPDI 单体回收套用）</p>
+
+<p><b>物流：</b>
+<span class="stream">S-401 LF 预聚体 80 kg/釜 60~80°C → V-501（中间罐）</span>
+<span class="stream">S-402 PPDI 单体 → 回收套用</span>
+</p>
+</div>
+
+<!-- ========== 500 单元：扩链剂配制 ========== -->
+<div class="area">
+<h2>500 单元 — 扩链剂（MOCA）熔化与储存</h2>
+
+<table>
+<tr>
+<td width="33%">
+<div class="equip">
+<div class="equip-id">V-501</div>
+<b>MOCA 熔化釜</b><br>
+100 L，304SS<br>
+桨叶搅拌 30 rpm<br>
+夹套导热油加热<br>
+<small>120°C 熔融 / 1 h</small>
+</div>
+</td>
+<td width="33%">
+<div class="equip">
+<div class="equip-id">V-502</div>
+<b>MOCA 储罐</b><br>
+50 L，304SS<br>
+夹套导热油保温<br>
+N₂ 微正压封<br>
+<small>110~120°C / N₂ 封</small>
+</div>
+</td>
+<td width="33%">
+<div class="note">
+<b>扩链剂特性：</b><br>
+• MOCA 熔点 107°C<br>
+• 熔融态黏度 5~10 mPa·s<br>
+• 有毒（GB 6.1 类），需密闭<br>
+• 加热避免局部过热（>130°C 分解）<br>
+• 100 kg 预聚体配 12 kg MOCA<br>
+• 加料温度 100~110°C（防爆聚）
+</div>
+</td>
+</tr>
+</table>
+
+<p><b>工艺目的：</b>将固态 MOCA 加热熔化为液态，并保温储存待用<br>
+<b>操作：</b>称量 MOCA 8 kg → V-501 → 升温至 120°C 熔化 1 h → 转入 V-502 保温 110~120°C 待用</p>
+
+<p><b>物流：</b>
+<span class="stream">S-501 熔融 MOCA 8 kg/釜 120°C → P-502 → MX-501</span>
+</p>
+</div>
+
+<!-- ========== 600 单元：浇注成型 ========== -->
+<div class="area">
+<h2>600 单元 — 浇注成型与硫化（核心单元 II）</h2>
+
+<table>
+<tr>
+<td width="22%">
+<div class="equip">
+<div class="equip-id">V-601</div>
+<b>预聚体中间罐</b><br>
+200 L，316L SS<br>
+夹套导热油保温<br>
+N₂ 封<br>
+<small>80~90°C</small>
+</div>
+</td>
+<td width="22%">
+<div class="equip">
+<div class="equip-id">P-601</div>
+<b>预聚体齿轮泵</b><br>
+100 L/h，316L SS<br>
+变频调速<br>
+<small>出口 0.3 MPaG</small>
+</div>
+</td>
+<td width="22%">
+<div class="equip">
+<div class="equip-id">P-602</div>
+<b>MOCA 齿轮泵</b><br>
+20 L/h，304SS<br>
+变频调速<br>
+<small>出口 0.3 MPaG</small>
+</div>
+</td>
+<td width="22%">
+<div class="equip">
+<div class="equip-id">MX-601</div>
+<b>静态混合器</b><br>
+DN25，L=300mm<br>
+PP/316L 单元<br>
+<small>混合后即浇注</small>
+</div>
+</td>
+<td width="22%">
+<div class="equip">
+<div class="equip-id">M-601</div>
+<b>浇注模具组</b><br>
+5 套 100L 模具<br>
+预涂脱模剂<br>
+预热 100~120°C<br>
+<small>5 釜/批 × 1 釜/2 天</small>
+</div>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="40%">
+<div class="equip">
+<div class="equip-id">O-601</div>
+<b>硫化烘箱</b><br>
+电加热鼓风干燥箱<br>
+2.5 m × 2.0 m × 2.0 m<br>
+温控 ±2°C<br>
+<small>100~120°C / 16~24 h</small>
+</div>
+</td>
+<td width="60%">
+<div class="note">
+<b>扩链反应：</b><br>
+<i>NCO-预聚体-NCO + H₂N-Ar-CH₂-Ar-NH₂ →</i><br>
+<i>-[NH-CO-NH-预聚体-NH-CO-NH-Ar-CH₂-Ar-NH-CO-NH-]ₙ</i><br>
+<br>
+<b>浇注操作要点：</b><br>
+• 模具预热 100~120°C，喷涂脱模剂（佳乐/硅油）<br>
+• P-601 / P-602 流量比 = 100:12（按配方）<br>
+• 静态混合后乳白时间 60~90 s<br>
+• 浇注后 5~10 min 凝胶，30 min 初步固化<br>
+• 硫化 100~120°C × 16~24 h
+</div>
+</td>
+</tr>
+</table>
+
+<p><b>物流：</b>
+<span class="stream">S-601 预聚体 80 kg/釜 80°C → P-601 → MX-601</span>
+<span class="stream">S-602 MOCA 8 kg/釜 120°C → P-602 → MX-601</span>
+<span class="stream">S-603 PU 弹性体 88 kg/批 → M-601 → O-601 硫化 → 脱模/后硫化/检验 → 包装</span>
+</p>
+</div>
+
+<!-- ========== 700 单元：公共工程 ========== -->
+<div class="area">
+<h2>700 单元 — 公共工程（导热油、真空、N₂、冷冻水）</h2>
+
+<table>
+<tr>
+<td width="20%">
+<div class="equip">
+<div class="equip-id">E-701</div>
+<b>导热油锅炉</b><br>
+电加热 30 kW<br>
+温控 200~300°C<br>
+膨胀槽 + 循环泵<br>
+<small>供 V-201/R-301/V-401/V-501/V-601 加热</small>
+</div>
+</td>
+<td width="20%">
+<div class="equip">
+<div class="equip-id">C-701</div>
+<b>冷冻水机组</b><br>
+风冷 10 kW（5~10°C）<br>
+循环泵 + 膨胀水箱<br>
+<small>供 R-301 急冷 + C-301 回流</small>
+</div>
+</td>
+<td width="20%">
+<div class="equip">
+<div class="equip-id">O-701</div>
+<b>真空泵组</b><br>
+2BW4 水环式 50 m³/h<br>
++ 气液分离罐 V-702<br>
+<small>供 V-201/V-401 真空</small>
+</div>
+</td>
+<td width="20%">
+<div class="equip">
+<div class="equip-id">N-701</div>
+<b>N₂ 钢瓶组</b><br>
+10 瓶 × 40 L<br>
+汇流排 + 缓冲罐 V-703<br>
++ 减压阀组<br>
+<small>0.5 MPaG 供 R-301/V-401/V-501/V-601</small>
+</div>
+</td>
+<td width="20%">
+<div class="equip">
+<div class="equip-id">冷却塔</div>
+<b>冷却水系统</b><br>
+30 m³/h 循环<br>
+25→40°C<br>
+<small>供 C-201/C-401 冷凝</small>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ========== 关键操作参数表 ========== -->
+<div class="area">
+<h2>关键操作参数汇总</h2>
+<table>
+<tr><th>单元</th><th>设备</th><th>温度 (°C)</th><th>压力</th><th>时间 (h)</th><th>关键控制点</th></tr>
+<tr><td>200</td><td>V-201 脱水</td><td>120</td><td>-0.095 MPa</td><td>2~3</td><td>水含量 ≤ 0.05%</td></tr>
+<tr><td>300</td><td>R-301 预聚</td><td>80~90</td><td>N₂ 0.05 MPaG</td><td>2~3</td><td>NCO% = 5.0~6.0%</td></tr>
+<tr><td>400</td><td>V-401 脱气</td><td>80</td><td>-0.095 MPa</td><td>1~2</td><td>游离 PPDI ≤ 0.1%</td></tr>
+<tr><td>500</td><td>V-501 熔化</td><td>120</td><td>常压</td><td>1</td><td>避免局部过热 > 130°C</td></tr>
+<tr><td>600</td><td>MX-601 浇注</td><td>100~120</td><td>0.3 MPaG</td><td>5~10 min</td><td>乳白 60~90 s</td></tr>
+<tr><td>600</td><td>O-601 硫化</td><td>100~120</td><td>常压</td><td>16~24</td><td>硬度 Shore A 85~95</td></tr>
+</table>
+</div>
+
+<!-- ========== 设备清单 ========== -->
+<div class="area">
+<h2>主要设备清单（10 t/a 装置）</h2>
+<table>
+<tr><th>序号</th><th>位号</th><th>名称</th><th>规格</th><th>材质</th><th>数量</th><th>功率/参数</th></tr>
+<tr><td>1</td><td>V-101</td><td>PTMG-1000 储罐</td><td>1000 L</td><td>304SS</td><td>1</td><td>60°C, N₂ 封</td></tr>
+<tr><td>2</td><td>V-102</td><td>PPDI 储罐（甲类）</td><td>200 L</td><td>316L SS</td><td>1</td><td>40°C, N₂ 封，避光</td></tr>
+<tr><td>3</td><td>V-103</td><td>MOCA 储罐</td><td>100 L</td><td>304SS</td><td>1</td><td>120°C 熔融态</td></tr>
+<tr><td>4</td><td>V-201</td><td>多元醇脱水釜</td><td>K-500 搪玻璃</td><td>搪玻璃</td><td>1</td><td>120°C / -0.095 MPa，搅拌 80 rpm，电机 1.5 kW</td></tr>
+<tr><td>5</td><td>C-201</td><td>脱水冷凝器</td><td>列管式 5 m²</td><td>304SS</td><td>1</td><td>冷却水 25→40°C</td></tr>
+<tr><td>6</td><td>V-202</td><td>凝液接收罐</td><td>50 L</td><td>304SS</td><td>1</td><td>常压</td></tr>
+<tr><td>7</td><td><b>R-301</b></td><td><b>预聚反应釜（核心）</b></td><td><b>K-500</b></td><td><b>316L SS</b></td><td><b>1</b></td><td><b>80~90°C / N₂ 0.05 MPaG，框式搅拌 60 rpm，电机 2.2 kW</b></td></tr>
+<tr><td>8</td><td>C-301</td><td>回流冷凝器</td><td>列管式 3 m²</td><td>316L SS</td><td>1</td><td>冷冻水 5°C</td></tr>
+<tr><td>9</td><td>V-401</td><td>预聚体脱气罐</td><td>500 L</td><td>316L SS</td><td>1</td><td>80°C / -0.095 MPa，搅拌 40 rpm，电机 1.5 kW</td></tr>
+<tr><td>10</td><td>C-401</td><td>脱气冷凝器</td><td>列管式 3 m²</td><td>316L SS</td><td>1</td><td>冷却水 25→40°C</td></tr>
+<tr><td>11</td><td>V-402</td><td>冷凝液收集罐</td><td>50 L</td><td>316L SS</td><td>1</td><td>PPDI 单体回收</td></tr>
+<tr><td>12</td><td>O-401</td><td>水环真空泵</td><td>2BW4 50 m³/h</td><td>—</td><td>1</td><td>电机 5.5 kW</td></tr>
+<tr><td>13</td><td>V-501</td><td>MOCA 熔化釜</td><td>100 L</td><td>304SS</td><td>1</td><td>120°C，搅拌 30 rpm，电机 0.75 kW</td></tr>
+<tr><td>14</td><td>V-502</td><td>MOCA 储罐</td><td>50 L</td><td>304SS</td><td>1</td><td>110~120°C 保温</td></tr>
+<tr><td>15</td><td>V-601</td><td>预聚体中间罐</td><td>200 L</td><td>316L SS</td><td>1</td><td>80~90°C，N₂ 封</td></tr>
+<tr><td>16</td><td><b>P-601</b></td><td><b>预聚体齿轮泵</b></td><td><b>100 L/h</b></td><td><b>316L SS</b></td><td><b>1</b></td><td><b>变频调速，电机 0.75 kW</b></td></tr>
+<tr><td>17</td><td><b>P-602</b></td><td><b>MOCA 齿轮泵</b></td><td><b>20 L/h</b></td><td><b>304SS</b></td><td><b>1</b></td><td><b>变频调速，电机 0.55 kW</b></td></tr>
+<tr><td>18</td><td>MX-601</td><td>静态混合器</td><td>DN25，L=300mm</td><td>PP/316L</td><td>1</td><td>混合后即浇注</td></tr>
+<tr><td>19</td><td>M-601</td><td>浇注模具组</td><td>5 套 100L</td><td>45# 钢镀硬铬</td><td>5</td><td>预热 100~120°C</td></tr>
+<tr><td>20</td><td>O-601</td><td>硫化烘箱</td><td>2.5×2.0×2.0 m</td><td>—</td><td>1</td><td>电加热 30 kW，温控 ±2°C</td></tr>
+<tr><td>21</td><td>E-701</td><td>导热油锅炉</td><td>30 kW</td><td>—</td><td>1</td><td>200~300°C，含膨胀槽+循环泵</td></tr>
+<tr><td>22</td><td>C-701</td><td>冷冻水机组</td><td>风冷 10 kW</td><td>—</td><td>1</td><td>5~10°C，含循环泵+膨胀水箱</td></tr>
+<tr><td>23</td><td>O-701</td><td>真空泵组</td><td>2BW4 50 m³/h</td><td>—</td><td>1</td><td>电机 5.5 kW</td></tr>
+<tr><td>24</td><td>N-701</td><td>N₂ 钢瓶组</td><td>10 瓶 × 40 L</td><td>—</td><td>1</td><td>含汇流排+缓冲罐+减压阀组</td></tr>
+<tr><td>25</td><td>—</td><td>冷却塔</td><td>30 m³/h 循环</td><td>—</td><td>1</td><td>25→40°C</td></tr>
+</table>
+</div>
+
+<!-- ========== 仪表控制方案 ========== -->
+<div class="area">
+<h2>关键仪表控制方案（核心回路）</h2>
+<table>
+<tr><th>回路位号</th><th>测量参数</th><th>控制策略</th><th>安装位置</th></tr>
+<tr><td>TIRC-301</td><td>R-301 温度</td><td>PID 串级：导热油阀 + 冷冻水阀切换（>85°C 关热开冷）</td><td>夹套循环油总管</td></tr>
+<tr><td>PIRC-301</td><td>R-301 压力</td><td>N₂ 补压调节阀（维持 0.05 MPaG）</td><td>N₂ 进气管</td></tr>
+<tr><td>QI-301</td><td>R-301 搅拌转速</td><td>变频调速（60 rpm）</td><td>电机控制柜</td></tr>
+<tr><td>AT-301</td><td>R-301 NCO 含量</td><td>二正丁胺滴定（手工每 30 min）</td><td>取样口</td></tr>
+<tr><td>TIRC-401</td><td>V-401 温度</td><td>PID 控导热油阀（80°C 恒温）</td><td>夹套循环油</td></tr>
+<tr><td>PIRC-401</td><td>V-401 真空度</td><td>PID 控真空阀（-0.095 MPa）</td><td>真空管路</td></tr>
+<tr><td>FRC-601</td><td>P-601 流量</td><td>质量流量计 + 变频泵（100 L/h）</td><td>预聚体管</td></tr>
+<tr><td>FRC-602</td><td>P-602 流量</td><td>质量流量计 + 变频泵（12 L/h）</td><td>MOCA 管</td></tr>
+<tr><td>TIRC-601</td><td>M-601 模具温度</td><td>电加热 + 鼓风（100~120°C ±2°C）</td><td>烘箱内</td></tr>
+</table>
+</div>
+
+<!-- ========== HAZOP 关键点 ========== -->
+<div class="area">
+<h2>HAZOP 关键偏差分析（节点：R-301 预聚反应釜）</h2>
+<table>
+<tr><th>偏差</th><th>原因</th><th>后果</th><th>保护层</th></tr>
+<tr><td>温度过高（>95°C）</td><td>反应放热、温控失效</td><td>支化反应、NCO 损失、凝胶</td><td>TIRC-301 串级切换冷冻水 + 高温联锁切断 PPDI 进料</td></tr>
+<tr><td>温度过低（<75°C）</td><td>导热油温度低、加料过快</td><td>反应不完全、NCO 残留高</td><td>TIRC-301 升温 + 延长反应时间</td></tr>
+<tr><td>NCO 含量超标（>7%）</td><td>PPDI 过量、反应时间不足</td><td>浇注时爆聚、硬度高</td><td>AT-301 滴定 + 补加 PTMG 调整</td></tr>
+<tr><td>N₂ 失封</td><td>N₂ 钢瓶空、阀门误关</td><td>空气进入 → PPDI 氧化、爆炸风险</td><td>PIRC-301 低压报警 + 联锁补 N₂</td></tr>
+<tr><td>搅拌停转</td><td>电机故障、过载</td><td>局部过热、爆聚</td><td>电机电流监测 + 联锁停加料 + 启动冷冻水</td></tr>
+<tr><td>PPDI 泄漏</td><td>密封失效</td><td>剧毒（GB 6.1 类）</td><td>可燃有毒气体检测 + 紧急通风 + 应急喷淋</td></tr>
+</table>
+</div>
+
+<!-- ========== 关键提示 ========== -->
+<div class="warn">
+<b>⚠ 关键提示（成熟工艺要点）：</b>
+<ol>
+<li><b>PPDI 操作防护</b>：剧毒（GB 6.1 类，LD₅₀ 800 mg/kg），操作环境需可燃有毒气体检测仪（VLEL ≤ 0.02 mg/m³）+ 紧急喷淋 + 正压防护服</li>
+<li><b>MOCA 操作防护</b>：有毒（GB 6.1 类，疑似致癌），需密闭化操作 + 局部排风 + 个人防护</li>
+<li><b>N₂ 保护全流程</b>：PPDI 接触空气易氧化变色，需 R-301/V-401/V-501/V-601 全程 N₂ 封</li>
+<li><b>温度控制</b>：预聚反应放热约 80 kJ/mol NCO，控温严防 ≥ 95°C 支化</li>
+<li><b>加料顺序</b>：PTMG 先进，PPDI 后加（防局部 NCO 过量暴聚）</li>
+<li><b>防火防爆</b>：MOCA 闪点 > 200°C，非易燃；PPDI 蒸气与空气混合物爆炸下限 0.4%，操作区防爆</li>
+<li><b>废气处理</b>：脱气尾气含 PPDI，需活性炭吸附 + 碱液喷淋后高空排放</li>
+</ol>
+</div>
+
+<div class="ok">
+<b>✓ 工艺成熟度论证：</b><br>
+• 工艺路线：UBE Adiprene® pPDI / Vibrathane® 体系（美国/日本成熟 40+ 年）<br>
+• 关键设备：搪玻璃脱水釜、316L 不锈钢预聚釜、齿轮泵浇注机——均有成熟厂家（搪玻璃：江苏扬阳/威海化工；316L 反应釜：森松/上海森松；齿轮泵：合肥通用）<br>
+• 单线 10 t/a 适合中试放大，间歇釜式可灵活切换配方<br>
+• 投资估算：300~500 万元（设备 + 安装 + 仪控，不含厂房）<br>
+• 厂房面积：约 200 m²（生产区 100 m² + 储罐区 50 m² + 公用工程 50 m²）
+</div>
+
+<p style="font-size:11px;color:#666;margin-top:12px;">
+文档版本：v1.0 | 编制日期：2026-06-06 | 编制依据：GB/T 50493、HG/T 20570、SH/T 3010、UBE Adiprene® 技术资料、化工工艺设计手册 第五版
+</p>
+
+</body>
+</html>

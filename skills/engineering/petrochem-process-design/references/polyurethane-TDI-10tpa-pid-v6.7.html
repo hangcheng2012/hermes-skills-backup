@@ -1,0 +1,1295 @@
+﻿﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>DETDA 法年产 10 吨 PU 弹性体装置 P&amp;ID v6.7</title>
+</head>
+<body style="font-family:SimHei,Arial,sans-serif;background:#fff;margin:0;padding:0;">
+
+<div style="background:#0d47a1;color:#fff;padding:10px 20px;border-bottom:4px solid #000;">
+<h1 style="margin:0;font-size:18px;">DETDA 法年产 10 吨聚氨酯弹性体（CPU）装置 — 管道仪表流程图 P&amp;ID</h1>
+<p style="margin:4px 0 0 0;font-size:11px;">工艺：DETDA 预聚物法（PTMG-1000 / TDI 80-20 / DETDA 液体扩链剂，NCO/OH=1.05）｜ 规模：10 t/a ｜ 300d × 1 釜/d × 5 釜/周 = 33.3 kg/釜 ｜ 出图规范：v6.7 ｜ 2026-06-23 (S-401 接 MX-601 / 仪表实线 tap / 信号线按系统分离 + 竖线错开 / 13 阀门全注)</p>
+</div>
+
+<div style="background:#fafafa;border-bottom:2px solid #999;padding:6px 20px;font-size:10px;">
+<strong>图例：</strong>
+<span style="margin-right:12px;"><svg width="40" height="10" style="vertical-align:middle;"><line x1="0" y1="5" x2="40" y2="5" stroke="#000" stroke-width="2.5"/></svg>主工艺</span>
+<span style="margin-right:12px;"><svg width="40" height="10" style="vertical-align:middle;"><line x1="0" y1="5" x2="40" y2="5" stroke="#1565C0" stroke-width="2"/></svg>CW 供应</span>
+<span style="margin-right:12px;"><svg width="40" height="10" style="vertical-align:middle;"><line x1="0" y1="5" x2="40" y2="5" stroke="#1565C0" stroke-width="2" stroke-dasharray="6,3"/></svg>CW 返回</span>
+<span style="margin-right:12px;"><svg width="40" height="10" style="vertical-align:middle;"><line x1="0" y1="5" x2="40" y2="5" stroke="#E65100" stroke-width="2"/></svg>HO 供应</span>
+<span style="margin-right:12px;"><svg width="40" height="10" style="vertical-align:middle;"><line x1="0" y1="5" x2="40" y2="5" stroke="#E65100" stroke-width="2" stroke-dasharray="6,3"/></svg>HO 返回</span>
+<span style="margin-right:12px;"><svg width="40" height="10" style="vertical-align:middle;"><line x1="0" y1="5" x2="40" y2="5" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3"/></svg>N₂</span>
+<span style="margin-right:12px;"><svg width="40" height="10" style="vertical-align:middle;"><line x1="0" y1="5" x2="40" y2="5" stroke="#000" stroke-width="2" stroke-dasharray="3,2"/></svg>VAC
+<span style="margin-right:12px;"><svg width="40" height="10" style="vertical-align:middle;"><rect x="0" y="2" width="40" height="6" fill="#FFFACD" fill-opacity="0.6"/><line x1="0" y1="5" x2="40" y2="5" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/></svg>蒸汽伴热+保温</span>
+<span style="margin-right:12px;"><svg width="40" height="10" style="vertical-align:middle;"><rect x="0" y="2" width="40" height="6" fill="#FFFACD" fill-opacity="0.6"/><line x1="0" y1="5" x2="40" y2="5" stroke="#FF6F00" stroke-width="1.5"/></svg>电伴热+保温</span></span>
+</div>
+
+<svg viewBox="0 0 2400 1900" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fff;">
+
+<!-- ★ N₂ 主管 y=60 整改: 段 1 拆成两小段, 避开 V-201 位置 (V-201 不需要 N₂) -->
+<line x1="200" y1="60" x2="410" y2="60" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3"/>
+<text x="410" y="56" font-family="SimHei" font-size="10" fill="#2E7D32" text-anchor="end">N₂ 99.999% 露点-40°C 0.6MPa.G</text>
+<line x1="600" y1="60" x2="620" y2="60" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3"/>
+<text x="620" y="56" font-family="SimHei" font-size="10" fill="#2E7D32" text-anchor="start">N₂ 段 1b (V-103)</text>
+<!-- N₂ 段 2: 短横线 x=1270-1290 (只 R-301) -->
+<line x1="1270" y1="60" x2="1290" y2="60" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3"/>
+<text x="1290" y="56" font-family="SimHei" font-size="10" fill="#2E7D32" text-anchor="start">N₂ 段 2 (R-301)</text>
+
+<!-- V-101 PTMG 储罐 (N₂ 封) -->
+<g>
+<rect x="120" y="100" width="160" height="180" fill="#FFF8E1" stroke="#FF6F00" stroke-width="2.5"/>
+<ellipse cx="200" cy="100" rx="80" ry="8" fill="#FFF8E1" stroke="#FF6F00" stroke-width="2.5"/>
+<ellipse cx="200" cy="280" rx="80" ry="8" fill="#FFF8E1" stroke="#FF6F00" stroke-width="2.5"/>
+<text x="200" y="128" font-family="SimHei" font-size="16" font-weight="bold" fill="#C62828" text-anchor="middle">V-101</text>
+<text x="200" y="148" font-family="SimHei" font-size="11" text-anchor="middle">PTMG-1000 储罐</text>
+<line x1="130" y1="160" x2="270" y2="160" stroke="#666" stroke-width="0.8"/>
+<text x="200" y="178" font-family="SimHei" font-size="9" text-anchor="middle">200L 304SS</text>
+<text x="200" y="195" font-family="SimHei" font-size="9" text-anchor="middle" fill="#1565C0" font-weight="bold">60°C 常压+N₂ 封</text>
+<text x="200" y="212" font-family="SimHei" font-size="9" text-anchor="middle">周用量 127kg</text>
+<text x="200" y="246" font-family="SimHei" font-size="9" text-anchor="middle">装填 0.85 实际 64%</text>
+<text x="200" y="263" font-family="SimHei" font-size="9" text-anchor="middle" fill="#2E7D32">↑N₂ 封</text>
+</g>
+<line x1="200" y1="60" x2="200" y2="100" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3"/>
+<polygon points="192,90 208,90 200,100" fill="#2E7D32"/>
+
+<!-- V-102 TDI 储罐 (N₂ 封 + N₂ 压料) -->
+<g>
+<rect x="320" y="100" width="160" height="180" fill="#FFF8E1" stroke="#FF6F00" stroke-width="2.5"/>
+<ellipse cx="400" cy="100" rx="80" ry="8" fill="#FFF8E1" stroke="#FF6F00" stroke-width="2.5"/>
+<ellipse cx="400" cy="280" rx="80" ry="8" fill="#FFF8E1" stroke="#FF6F00" stroke-width="2.5"/>
+<text x="400" y="128" font-family="SimHei" font-size="16" font-weight="bold" fill="#C62828" text-anchor="middle">V-102</text>
+<text x="400" y="148" font-family="SimHei" font-size="11" text-anchor="middle">TDI 储罐 ⚠甲类</text>
+<line x1="330" y1="160" x2="470" y2="160" stroke="#666" stroke-width="0.8"/>
+<text x="400" y="178" font-family="SimHei" font-size="9" text-anchor="middle">50L 304SS+玻璃衬里</text>
+<text x="400" y="195" font-family="SimHei" font-size="9" text-anchor="middle" fill="#1565C0" font-weight="bold">30°C 常压+N₂ 封</text>
+<text x="400" y="212" font-family="SimHei" font-size="9" text-anchor="middle">★周用量 25.9kg</text>
+<text x="400" y="246" font-family="SimHei" font-size="9" text-anchor="middle">装填 0.85 实际 42%</text>
+<text x="400" y="263" font-family="SimHei" font-size="9" text-anchor="middle" fill="#2E7D32">↑N₂ 压料 0.1MPa</text>
+</g>
+<line x1="400" y1="60" x2="400" y2="100" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3"/>
+<polygon points="392,90 408,90 400,100" fill="#2E7D32"/>
+<circle cx="380" cy="90" r="14" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+<text x="380" y="86" font-family="Arial" font-size="8" font-weight="bold" fill="#C62828" text-anchor="middle">LSHH</text>
+<text x="380" y="97" font-family="Arial" font-size="7" font-weight="bold" fill="#C62828" text-anchor="middle">-102</text>
+
+<!-- V-103 DETDA 储罐 (液体扩链剂, N₂ 封) -->
+<g>
+<rect x="520" y="100" width="160" height="180" fill="#E3F2FD" stroke="#1565C0" stroke-width="2.5"/>
+<ellipse cx="600" cy="100" rx="80" ry="8" fill="#E3F2FD" stroke="#1565C0" stroke-width="2.5"/>
+<ellipse cx="600" cy="280" rx="80" ry="8" fill="#E3F2FD" stroke="#1565C0" stroke-width="2.5"/>
+<text x="600" y="128" font-family="SimHei" font-size="16" font-weight="bold" fill="#0d47a1" text-anchor="middle">V-103</text>
+<text x="600" y="148" font-family="SimHei" font-size="11" text-anchor="middle">DETDA 储罐 ⭐液体</text>
+<line x1="530" y1="160" x2="670" y2="160" stroke="#666" stroke-width="0.8"/>
+<text x="600" y="178" font-family="SimHei" font-size="9" text-anchor="middle">25L 304SS</text>
+<text x="600" y="195" font-family="SimHei" font-size="9" text-anchor="middle" fill="#1565C0" font-weight="bold">25°C 常压+N₂ 封</text>
+<text x="600" y="212" font-family="SimHei" font-size="9" text-anchor="middle">周用量 13.95kg(液体)</text>
+<text x="600" y="246" font-family="SimHei" font-size="9" text-anchor="middle">装填 0.85 实际 55%</text>
+<text x="600" y="263" font-family="SimHei" font-size="9" text-anchor="middle" fill="#2E7D32">↑N₂ 封 (防氧化)</text>
+</g>
+<line x1="600" y1="60" x2="600" y2="100" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3"/>
+<polygon points="592,90 608,90 600,100" fill="#2E7D32"/>
+
+<!-- V-201 PTMG 脱水釜 (真空) -->
+<g>
+<rect x="320" y="400" width="240" height="320" fill="#E3F2FD" stroke="#1565C0" stroke-width="2.5"/>
+<ellipse cx="440" cy="400" rx="120" ry="10" fill="#E3F2FD" stroke="#1565C0" stroke-width="2.5"/>
+<ellipse cx="440" cy="720" rx="120" ry="10" fill="#E3F2FD" stroke="#1565C0" stroke-width="2.5"/>
+<text x="440" y="430" font-family="SimHei" font-size="18" font-weight="bold" fill="#0d47a1" text-anchor="middle">V-201</text>
+<text x="440" y="450" font-family="SimHei" font-size="11" text-anchor="middle">PTMG 脱水釜（真空 ⭐）</text>
+<line x1="330" y1="465" x2="550" y2="465" stroke="#666" stroke-width="0.8"/>
+<text x="440" y="485" font-family="SimHei" font-size="10" text-anchor="middle">100L 304SS+搪玻璃</text>
+<text x="440" y="503" font-family="SimHei" font-size="10" text-anchor="middle" fill="#1565C0" font-weight="bold">120°C / 10 mbar 真空</text>
+<text x="440" y="521" font-family="SimHei" font-size="9" text-anchor="middle">单釜 25.4L(100L×0.25)</text>
+<text x="440" y="551" font-family="SimHei" font-size="9" text-anchor="middle">装填 0.45 实际 25%</text>
+<text x="440" y="568" font-family="SimHei" font-size="9" text-anchor="middle">HO 200→160°C 夹套</text>
+<text x="440" y="585" font-family="SimHei" font-size="9" text-anchor="middle">锚式搅拌 60rpm</text>
+<text x="440" y="601" font-family="SimHei" font-size="9" text-anchor="middle">停留 2h 脱水率&lt;0.05%</text>
+<rect x="310" y="390" width="260" height="340" fill="none" stroke="#1565C0" stroke-width="3" stroke-dasharray="6,3"/>
+<rect x="310" y="390" width="260" height="340" fill="#E3F2FD" fill-opacity="0.30"/>
+<text x="565" y="402" font-family="SimHei" font-size="9" fill="#1565C0" font-style="italic">▣ HO 夹套</text>
+</g>
+
+<!-- R-301 预聚反应釜 (核心) -->
+<g>
+<rect x="1080" y="400" width="400" height="420" fill="#FFF8E1" stroke="#C62828" stroke-width="3"/>
+<ellipse cx="1280" cy="400" rx="200" ry="12" fill="#FFF8E1" stroke="#C62828" stroke-width="3"/>
+<ellipse cx="1280" cy="820" rx="200" ry="12" fill="#FFF8E1" stroke="#C62828" stroke-width="3"/>
+<text x="1140" y="440" font-family="SimHei" font-size="22" font-weight="bold" fill="#C62828">R-301</text>
+<text x="1230" y="440" font-family="SimHei" font-size="15" font-weight="bold">预聚反应釜</text>
+<text x="1380" y="440" font-family="SimHei" font-size="11" fill="#C62828" font-weight="bold">⚠ CPU 核心</text>
+<line x1="1090" y1="455" x2="1470" y2="455" stroke="#666" stroke-width="0.8"/>
+<text x="1100" y="478" font-family="SimHei" font-size="11">100L 304SS+锚式搅拌 80rpm</text>
+<text x="1100" y="498" font-family="SimHei" font-size="11" fill="#1565C0" font-weight="bold">80°C / N₂ 0.05 MPa.G</text>
+<text x="1100" y="518" font-family="SimHei" font-size="10">单釜 30.6kg=29.1L(100L×0.29)</text>
+<text x="1100" y="548" font-family="SimHei" font-size="10">装填 0.5 实际 29%</text>
+<text x="1100" y="568" font-family="SimHei" font-size="10">反应 1.5-2h NCO%=4.7±0.3%</text>
+<text x="1100" y="585" font-family="SimHei" font-size="10">HO 200→160°C + CW 5→20°C</text>
+<line x1="1280" y1="412" x2="1280" y2="800" stroke="#000" stroke-width="2"/>
+<rect x="1240" y="720" width="80" height="40" fill="none" stroke="#000" stroke-width="1.5"/>
+<line x1="1280" y1="400" x2="1280" y2="385" stroke="#000" stroke-width="2"/>
+<rect x="1270" y="370" width="20" height="15" fill="#000"/>
+<text x="1295" y="380" font-family="SimHei" font-size="9" fill="#000">M 电机</text>
+<rect x="1070" y="388" width="420" height="440" fill="none" stroke="#1565C0" stroke-width="3" stroke-dasharray="6,3"/>
+<rect x="1070" y="388" width="420" height="440" fill="#E3F2FD" fill-opacity="0.30"/>
+<text x="1485" y="400" font-family="SimHei" font-size="9" fill="#1565C0" font-style="italic">▣ HO/CW 夹套</text>
+</g>
+
+<!-- V-401 预聚体脱气罐 (真空) - 进口 x=1700 / 出口 x=1740 错开 -->
+<g>
+<rect x="1620" y="400" width="200" height="320" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2.5"/>
+<ellipse cx="1720" cy="400" rx="100" ry="10" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2.5"/>
+<ellipse cx="1720" cy="720" rx="100" ry="10" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2.5"/>
+<text x="1720" y="430" font-family="SimHei" font-size="18" font-weight="bold" fill="#2E7D32" text-anchor="middle">V-401</text>
+<text x="1720" y="450" font-family="SimHei" font-size="11" text-anchor="middle">预聚体脱气罐（真空 ⭐）</text>
+<line x1="1630" y1="465" x2="1810" y2="465" stroke="#666" stroke-width="0.8"/>
+<text x="1720" y="485" font-family="SimHei" font-size="10" text-anchor="middle">100L 304SS+框式搅拌 30rpm</text>
+<text x="1720" y="503" font-family="SimHei" font-size="10" text-anchor="middle" fill="#1565C0" font-weight="bold">80°C / 10 mbar 真空</text>
+<text x="1720" y="521" font-family="SimHei" font-size="9" text-anchor="middle">单釜 29.1L(100L×0.29)</text>
+<text x="1720" y="551" font-family="SimHei" font-size="9" text-anchor="middle">装填 0.5 实际 29%</text>
+<text x="1720" y="568" font-family="SimHei" font-size="9" text-anchor="middle">HO 80→60°C 夹套</text>
+<text x="1720" y="584" font-family="SimHei" font-size="9" text-anchor="middle">脱 CO₂ + DETDA 蒸汽 30-45min</text>
+<rect x="1610" y="390" width="220" height="340" fill="none" stroke="#1565C0" stroke-width="3" stroke-dasharray="6,3"/>
+<rect x="1610" y="390" width="220" height="340" fill="#E3F2FD" fill-opacity="0.30"/>
+<text x="1825" y="402" font-family="SimHei" font-size="9" fill="#1565C0" font-style="italic">▣ HO 夹套</text>
+</g>
+
+<!-- ============================================================
+     真空管路 (整改: V-201→O-201 真空泵→T-601, V-401→O-401 真空泵→T-601)
+     ============================================================ -->
+
+<!-- V-201 顶部 NO-201B 顶出 VAC (整改: 垂直接到 O-201 真空泵) -->
+<circle cx="380" cy="400" r="3" fill="#000"/>
+<line x1="380" y1="400" x2="380" y2="320" stroke="#000" stroke-width="2" stroke-dasharray="3,2"/>
+<text x="385" y="380" font-family="SimHei" font-size="9" fill="#000">NO-201B 顶出 VAC</text>
+
+<!-- O-201 真空泵 (整改: 移到主流程区 V-201 上方 y=320) -->
+<g transform="translate(380,320)">
+<rect x="-20" y="-12" width="40" height="24" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+<text x="0" y="-16" font-family="SimHei" font-size="9" font-weight="bold" fill="#C62828" text-anchor="middle">O-201</text>
+<text x="0" y="2" font-family="SimHei" font-size="7" text-anchor="middle">真空泵</text>
+<text x="0" y="11" font-family="SimHei" font-size="6" text-anchor="middle">10 mbar 1.5kW</text>
+</g>
+<polygon points="372,310 388,310 380,320" fill="#000"/>
+
+<!-- O-201 真空泵出口 (y=295 水平连接到 T-601) -->
+<line x1="380" y1="308" x2="380" y2="290" stroke="#000" stroke-width="2" stroke-dasharray="3,2"/>
+<line x1="380" y1="290" x2="1820" y2="290" stroke="#000" stroke-width="2" stroke-dasharray="3,2"/>
+<text x="900" y="283" font-family="SimHei" font-size="9" fill="#000">O-201 真空排气支管 (含 TDI/DETDA 蒸汽) → T-601</text>
+
+<!-- V-401 顶部 NO-401B 顶出 VAC (整改: 垂直接到 O-401 真空泵) -->
+<circle cx="1780" cy="400" r="3" fill="#000"/>
+<line x1="1780" y1="400" x2="1780" y2="360" stroke="#000" stroke-width="2" stroke-dasharray="3,2"/>
+<line x1="1780" y1="360" x2="1780" y2="320" stroke="#000" stroke-width="2" stroke-dasharray="3,2"/>
+<text x="1785" y="380" font-family="SimHei" font-size="9" fill="#000">NO-401B 顶出 VAC</text>
+
+<!-- ★ v6.4 新增: PCV-401 阀门 (V-401→O-401 真空立管中点 1780,360) -->
+<g transform="translate(1780,360)">
+<path d="M -10 -6 L 0 0 L -10 6 Z M 0 0 L 10 -6 L 10 6 Z" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<circle cx="0" cy="-16" r="5" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<line x1="-8" y1="-20" x2="8" y2="-20" stroke="#C62828" stroke-width="1.2"/>
+</g>
+<text x="1740" y="350" font-family="SimHei" font-size="8" fill="#C62828">PCV-401</text>
+
+
+<!-- O-401 真空泵 (整改: 移到主流程区 V-401 上方 y=320) -->
+<g transform="translate(1780,320)">
+<rect x="-20" y="-12" width="40" height="24" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+<text x="0" y="-16" font-family="SimHei" font-size="9" font-weight="bold" fill="#C62828" text-anchor="middle">O-401</text>
+<text x="0" y="2" font-family="SimHei" font-size="7" text-anchor="middle">真空泵</text>
+<text x="0" y="11" font-family="SimHei" font-size="6" text-anchor="middle">10 mbar 3kW</text>
+</g>
+<polygon points="1772,310 1788,310 1780,320" fill="#000"/>
+
+<!-- O-401 真空泵出口 (y=290 水平连接到 T-601, 与 O-201 出口汇合) -->
+<line x1="1780" y1="308" x2="1780" y2="290" stroke="#000" stroke-width="2" stroke-dasharray="3,2"/>
+<line x1="1780" y1="290" x2="1820" y2="290" stroke="#000" stroke-width="2" stroke-dasharray="3,2"/>
+
+<!-- 真空排气支管 → T-601 -->
+<line x1="1820" y1="290" x2="1820" y2="990" stroke="#000" stroke-width="2" stroke-dasharray="3,2"/>
+<line x1="1820" y1="990" x2="1820" y2="990" stroke="#000" stroke-width="2" stroke-dasharray="3,2"/>
+<polygon points="1812,985 1828,985 1820,995" fill="#000"/>
+
+<g>
+<rect x="1820" y="950" width="180" height="80" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+<text x="1910" y="975" font-family="SimHei" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">T-601 活性炭吸附</text>
+<text x="1910" y="995" font-family="SimHei" font-size="9" text-anchor="middle">吸附 TDI 蒸汽</text>
+<text x="1910" y="1010" font-family="SimHei" font-size="9" text-anchor="middle" fill="#C62828">⚠ 危废定期更换</text>
+<text x="1910" y="1023" font-family="SimHei" font-size="9" text-anchor="middle">→ X-601 RTO</text>
+</g>
+
+<line x1="2000" y1="990" x2="2080" y2="990" stroke="#000" stroke-width="2" stroke-dasharray="3,2"/>
+<polygon points="2068,982 2068,998 2080,990" fill="#000"/>
+
+<g>
+<rect x="2080" y="950" width="180" height="80" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+<text x="2170" y="975" font-family="SimHei" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">X-601 RTO 焚烧炉</text>
+<text x="2170" y="995" font-family="SimHei" font-size="9" text-anchor="middle">蓄热氧化 750°C</text>
+<text x="2170" y="1010" font-family="SimHei" font-size="9" text-anchor="middle" fill="#C62828">TDI 分解 >99%</text>
+<text x="2170" y="1023" font-family="SimHei" font-size="9" text-anchor="middle">→ 达标排放</text>
+</g>
+
+<g>
+<circle cx="2300" cy="990" r="18" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+<text x="2300" y="985" font-family="Arial" font-size="9" font-weight="bold" fill="#C62828" text-anchor="middle">QT</text>
+<text x="2300" y="998" font-family="Arial" font-size="9" font-weight="bold" fill="#C62828" text-anchor="middle">-601</text>
+</g>
+<text x="2300" y="1025" font-family="SimHei" font-size="8" text-anchor="middle" fill="#C62828">TDI&lt;0.02ppm</text>
+<line x1="2282" y1="990" x2="2260" y2="990" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+
+<!-- ★ v6.3 新版: S-101 PTMG 蒸汽伴热+保温 (短平行线,横向偏移 6px) -->
+<line x1="206" y1="280" x2="206" y2="380" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="206" y1="374" x2="383" y2="374" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="386" y1="380" x2="386" y2="395" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="290" y="370" font-family="SimHei" font-size="7" fill="#C62828" text-anchor="middle">▬▬ 蒸汽伴热+保温</text>
+<!-- 1. V-101 → P-101 → V-201 (PTMG 转料) -->
+<circle cx="200" cy="280" r="3" fill="#000"/>
+<line x1="200" y1="280" x2="200" y2="380" stroke="#000" stroke-width="2.5"/>
+<line x1="200" y1="380" x2="380" y2="380" stroke="#000" stroke-width="2.5"/>
+<line x1="380" y1="380" x2="380" y2="395" stroke="#000" stroke-width="2.5"/>
+<polygon points="372,385 388,385 380,395" fill="#000"/>
+<g transform="translate(290,380)">
+<circle cx="0" cy="0" r="14" fill="#FFF" stroke="#FF6F00" stroke-width="2.5"/>
+<path d="M -8 -5 L 8 0 L -8 5 Z" fill="#000"/>
+<text x="0" y="-18" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle">P</text>
+<text x="0" y="22" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle">-101</text>
+</g>
+<text x="240" y="365" font-family="SimHei" font-size="9" font-weight="bold">P-101</text>
+<rect x="120" y="324" width="100" height="14" fill="#E3F2FD" stroke="#0277BD" stroke-width="0.8"/>
+<text x="170" y="335" font-family="SimHei" font-size="9" text-anchor="middle">S-101 PTMG</text>
+
+<!-- ★ v6.3 新版: S-102 TDI 蒸汽伴热+保温 (短平行线,横向偏移 6px) -->
+<line x1="406" y1="280" x2="406" y2="400" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="406" y1="394" x2="1283" y2="394" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="1286" y1="400" x2="1286" y2="395" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="840" y="390" font-family="SimHei" font-size="7" fill="#C62828" text-anchor="middle">▬▬ 蒸汽伴热+保温</text>
+<!-- 2. V-102 → R-301 (TDI N₂ 压料) - 流股标签位置调整 -->
+<circle cx="400" cy="280" r="3" fill="#000"/>
+<line x1="400" y1="280" x2="400" y2="400" stroke="#000" stroke-width="2.5"/>
+<line x1="400" y1="400" x2="1280" y2="400" stroke="#000" stroke-width="2.5"/>
+<line x1="1280" y1="400" x2="1280" y2="395" stroke="#000" stroke-width="2.5"/>
+<polygon points="1272,395 1288,395 1280,410" fill="#000"/>
+<g transform="translate(400,320)">
+<path d="M -10 -6 L 0 0 L -10 6 Z M 0 0 L 10 -6 L 10 6 Z" fill="#FFF" stroke="#000" stroke-width="1.5"/>
+</g>
+<text x="415" y="323" font-family="SimHei" font-size="9">Z-102</text>
+<g transform="translate(400,360)">
+<path d="M -10 -6 L 0 0 L -10 6 Z M 0 0 L 10 -6 L 10 6 Z" fill="#FFF" stroke="#C62828" stroke-width="2"/>
+<line x1="-10" y1="-10" x2="10" y2="10" stroke="#C62828" stroke-width="1.5"/>
+<line x1="-10" y1="10" x2="10" y2="-10" stroke="#C62828" stroke-width="1.5"/>
+</g>
+<text x="415" y="363" font-family="SimHei" font-size="9" fill="#C62828" font-weight="bold">XV-102</text>
+<g transform="translate(800,400)">
+<path d="M -10 -6 L 0 0 L -10 6 Z M 0 0 L 10 -6 L 10 6 Z" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<circle cx="0" cy="-16" r="5" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<line x1="-8" y1="-20" x2="8" y2="-20" stroke="#C62828" stroke-width="1.2"/>
+</g>
+<text x="815" y="395" font-family="SimHei" font-size="9" fill="#C62828" font-weight="bold">FCV-301</text>
+<rect x="530" y="393" width="140" height="14" fill="#E3F2FD" stroke="#0277BD" stroke-width="0.8"/>
+<text x="600" y="404" font-family="SimHei" font-size="9" text-anchor="middle">S-102 TDI (N₂ 压料)</text>
+<line x1="380" y1="100" x2="380" y2="360" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="380" y1="360" x2="400" y2="360" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+
+<!-- 3. V-103 → P-501 → MX-601 (DETDA 投料) - 流股标签位置调整 -->
+<circle cx="600" cy="280" r="3" fill="#000"/>
+<line x1="600" y1="280" x2="600" y2="1030" stroke="#000" stroke-width="2.5"/>
+<line x1="600" y1="1030" x2="1080" y2="1030" stroke="#000" stroke-width="2.5"/>
+<line x1="1080" y1="1030" x2="1080" y2="1050" stroke="#000" stroke-width="2.5"/>
+<polygon points="1072,1040 1088,1040 1080,1050" fill="#000"/>
+<g transform="translate(900,1030)">
+<circle cx="0" cy="0" r="14" fill="#FFF" stroke="#FF6F00" stroke-width="2.5"/>
+<path d="M -8 -5 L 8 0 L -8 5 Z" fill="#000"/>
+<text x="0" y="-18" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle">P</text>
+<text x="0" y="22" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle">-501</text>
+</g>
+<text x="916" y="1013" font-family="SimHei" font-size="9" font-weight="bold">P-501</text>
+<rect x="700" y="1080" width="120" height="14" fill="#E3F2FD" stroke="#0277BD" stroke-width="0.8"/>
+<text x="760" y="1091" font-family="SimHei" font-size="9" text-anchor="middle">S-103 DETDA (液体)</text>
+
+<!-- ★ v6.3 新版: S-201 合格PTMG 蒸汽伴热+保温 (短平行线,横向偏移 6px) -->
+<line x1="446" y1="720" x2="446" y2="780" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="446" y1="774" x2="1283" y2="774" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="1286" y1="780" x2="1286" y2="830" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="860" y="770" font-family="SimHei" font-size="7" fill="#C62828" text-anchor="middle">▬▬ 蒸汽伴热+保温</text>
+<!-- 4. V-201 → P-201 → R-301 (合格 PTMG) - 流股标签位置调整 -->
+<circle cx="440" cy="720" r="3" fill="#000"/>
+<line x1="440" y1="720" x2="440" y2="780" stroke="#000" stroke-width="2.5"/>
+<line x1="440" y1="780" x2="1280" y2="780" stroke="#000" stroke-width="2.5"/>
+<line x1="1280" y1="780" x2="1280" y2="830" stroke="#000" stroke-width="2.5"/>
+<polygon points="1272,820 1288,820 1280,830" fill="#000"/>
+<g transform="translate(800,780)">
+<circle cx="0" cy="0" r="14" fill="#FFF" stroke="#FF6F00" stroke-width="2.5"/>
+<path d="M -8 -5 L 8 0 L -8 5 Z" fill="#000"/>
+<text x="0" y="-18" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle">P</text>
+<text x="0" y="22" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle">-201</text>
+</g>
+<text x="816" y="763" font-family="SimHei" font-size="9" font-weight="bold">P-201</text>
+<rect x="500" y="826" width="120" height="14" fill="#E3F2FD" stroke="#0277BD" stroke-width="0.8"/>
+<text x="560" y="837" font-family="SimHei" font-size="9" text-anchor="middle">S-201 合格 PTMG</text>
+
+<!-- ★ v6.3 新版: S-301 预聚体 电伴热+保温 (短平行线,横向偏移 6px) -->
+<line x1="1286" y1="820" x2="1286" y2="855" stroke="#FF6F00" stroke-width="1.5"/>
+<line x1="1286" y1="849" x2="1703" y2="849" stroke="#FF6F00" stroke-width="1.5"/>
+<line x1="1706" y1="855" x2="1706" y2="720" stroke="#FF6F00" stroke-width="1.5"/>
+<text x="1490" y="845" font-family="SimHei" font-size="7" fill="#FF6F00" text-anchor="middle">▬▬ 电伴热+保温</text>
+<!-- 5. R-301 → P-301 → V-401 (整改: 进口接管 NO-401A x=1700) -->
+<circle cx="1280" cy="855" r="3" fill="#000"/>
+<line x1="1280" y1="820" x2="1280" y2="855" stroke="#000" stroke-width="2.5"/>
+<line x1="1280" y1="855" x2="1700" y2="855" stroke="#000" stroke-width="2.5"/>
+<line x1="1700" y1="855" x2="1700" y2="720" stroke="#000" stroke-width="2.5"/>
+<polygon points="1692,730 1708,730 1700,720" fill="#000"/>
+<g transform="translate(1450,855)">
+<circle cx="0" cy="0" r="14" fill="#FFF" stroke="#FF6F00" stroke-width="2.5"/>
+<path d="M -8 -5 L 8 0 L -8 5 Z" fill="#000"/>
+<text x="0" y="-18" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle">P</text>
+<text x="0" y="22" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle">-301</text>
+</g>
+<text x="1466" y="838" font-family="SimHei" font-size="9" font-weight="bold">P-301</text>
+<text x="1660" y="878" font-family="SimHei" font-size="8" text-anchor="end" fill="#000">S-301 预聚体</text>
+
+<!-- ★ v6.3 新版: S-401 脱气预聚体 电伴热+保温 (短平行线,横向偏移 6px) -->
+<line x1="1746" y1="720" x2="1746" y2="1010" stroke="#FF6F00" stroke-width="1.5"/>
+<line x1="1746" y1="1004" x2="1243" y2="1004" stroke="#FF6F00" stroke-width="1.5"/>
+<text x="1490" y="1000" font-family="SimHei" font-size="7" fill="#FF6F00" text-anchor="middle">▬▬ 电伴热+保温</text>
+<!-- 6. V-401 → P-401 → MX-601 (整改: 出口接管 NO-401B x=1740, 错开进口 x=1700) -->
+<circle cx="1740" cy="720" r="3" fill="#000"/>
+<line x1="1740" y1="720" x2="1740" y2="1010" stroke="#000" stroke-width="2.5"/>
+<line x1="1740" y1="1010" x2="1240" y2="1010" stroke="#000" stroke-width="2.5"/>
+<line x1="1240" y1="1010" x2="1240" y2="1010" stroke="#000" stroke-width="2.5"/>
+<polygon points="1232,1000 1248,1000 1240,1010" fill="#000"/>
+<line x1="1240" y1="1010" x2="1240" y2="1050" stroke="#000" stroke-width="2.5"/>
+<g transform="translate(1500,1010)">
+<circle cx="0" cy="0" r="14" fill="#FFF" stroke="#FF6F00" stroke-width="2.5"/>
+<path d="M -8 -5 L 8 0 L -8 5 Z" fill="#000"/>
+<text x="0" y="-18" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle">P</text>
+<text x="0" y="22" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle">-401</text>
+</g>
+<text x="1516" y="993" font-family="SimHei" font-size="9" font-weight="bold">P-401</text>
+<rect x="1280" y="1054" width="120" height="14" fill="#E3F2FD" stroke="#0277BD" stroke-width="0.8"/>
+<text x="1340" y="1065" font-family="SimHei" font-size="9" text-anchor="middle">S-401 脱气预聚体</text>
+
+<!-- ★ v6.5 新版: S-601 混合料 电伴热+保温 (跳过 P-601 泵,标签居中) -->
+<line x1="1246" y1="1110" x2="1246" y2="1130" stroke="#FF6F00" stroke-width="1.5"/>
+<line x1="1246" y1="1124" x2="1290" y2="1124" stroke="#FF6F00" stroke-width="1.5"/>
+<line x1="1310" y1="1124" x2="1503" y2="1124" stroke="#FF6F00" stroke-width="1.5"/>
+<line x1="1506" y1="1130" x2="1506" y2="1110" stroke="#FF6F00" stroke-width="1.5"/>
+<text x="1400" y="1120" font-family="SimHei" font-size="7" fill="#FF6F00" text-anchor="middle">▬▬ 电伴热+保温</text>
+<!-- 7. MX-601 → P-601 → 700 烘箱 -->
+<line x1="1240" y1="1110" x2="1240" y2="1130" stroke="#000" stroke-width="2.5"/>
+<line x1="1240" y1="1130" x2="1300" y2="1130" stroke="#000" stroke-width="2.5"/>
+<line x1="1300" y1="1130" x2="1500" y2="1130" stroke="#000" stroke-width="2.5"/>
+<g transform="translate(1300,1130)">
+<rect x="-12" y="-8" width="24" height="16" fill="#FFF" stroke="#C62828" stroke-width="2"/>
+<line x1="-4" y1="-8" x2="-4" y2="8" stroke="#C62828" stroke-width="1.5"/>
+<line x1="4" y1="-8" x2="4" y2="8" stroke="#C62828" stroke-width="1.5"/>
+<text x="0" y="-15" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle">P</text>
+<text x="0" y="24" font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle">-601</text>
+</g>
+<text x="1316" y="1113" font-family="SimHei" font-size="9" font-weight="bold">P-601</text>
+<line x1="1620" y1="1150" x2="1620" y2="1200" stroke="#000" stroke-width="2.5"/>
+<polygon points="1612,1190 1628,1190 1620,1200" fill="#000"/>
+
+<!-- MX-601 静态混合器 -->
+<g>
+<rect x="1080" y="1050" width="160" height="100" fill="#FFFDE7" stroke="#F57F17" stroke-width="3"/>
+<text x="1160" y="1080" font-family="SimHei" font-size="16" font-weight="bold" fill="#F57F17" text-anchor="middle">MX-601</text>
+<text x="1160" y="1098" font-family="SimHei" font-size="11" text-anchor="middle">静态混合器</text>
+<line x1="1090" y1="1108" x2="1230" y2="1108" stroke="#666" stroke-width="0.8"/>
+<text x="1160" y="1125" font-family="SimHei" font-size="9" text-anchor="middle">DN25 316L+SK</text>
+<text x="1160" y="1140" font-family="SimHei" font-size="9" text-anchor="middle" fill="#1565C0" font-weight="bold">80°C / 常压 30s</text>
+</g>
+
+<!-- P-601 浇注机+模具 -->
+<g>
+<rect x="1500" y="1050" width="240" height="100" fill="#FFFDE7" stroke="#F57F17" stroke-width="3"/>
+<text x="1550" y="1080" font-family="SimHei" font-size="16" font-weight="bold" fill="#F57F17">CM-601</text>
+<text x="1620" y="1080" font-family="SimHei" font-size="13">浇注机+模具</text>
+<line x1="1510" y1="1090" x2="1730" y2="1090" stroke="#666" stroke-width="0.8"/>
+<text x="1620" y="1108" font-family="SimHei" font-size="9" text-anchor="middle">钢模具+HO 加热</text>
+<text x="1620" y="1123" font-family="SimHei" font-size="9" text-anchor="middle" fill="#1565C0" font-weight="bold">80→100°C / 5bar</text>
+<text x="1620" y="1138" font-family="SimHei" font-size="9" text-anchor="middle">浇注 5min</text>
+</g>
+
+<!-- 700 后熟化烘箱 -->
+<g>
+<rect x="1500" y="1200" width="400" height="100" fill="#FFFDE7" stroke="#F57F17" stroke-width="2.5"/>
+<text x="1550" y="1232" font-family="SimHei" font-size="14" font-weight="bold" fill="#F57F17">700 后熟化烘箱</text>
+<text x="1550" y="1254" font-family="SimHei" font-size="10">100°C × 16h 自然冷却至 RT</text>
+<text x="1550" y="1272" font-family="SimHei" font-size="10" fill="#1565C0" font-weight="bold">常压</text>
+<text x="1880" y="1232" font-family="SimHei" font-size="10" text-anchor="end" fill="#1565C0" font-weight="bold">→ PU 弹性体成品</text>
+</g>
+
+<!-- ★ 主管层 (女王的"不延伸"整改 - 两端不悬空) -->
+<!-- HO 主管 y=982/945: 起点 x=220 (R-301 左接管) → 终点 x=1700 (V-401 接管位置) -->
+<text x="220" y="941" font-family="SimHei" font-size="10" fill="#E65100" font-weight="bold">↓ HO 160°C 回油主管</text>
+<line x1="220" y1="945" x2="1700" y2="945" stroke="#E65100" stroke-width="2.5" stroke-dasharray="6,3"/>
+<text x="1700" y="941" font-family="SimHei" font-size="10" fill="#E65100" text-anchor="end">（V-201/R-301/V-401 3 个夹套）</text>
+
+<text x="220" y="978" font-family="SimHei" font-size="10" fill="#E65100" font-weight="bold">↑ HO 200°C 供油主管</text>
+<line x1="220" y1="982" x2="1700" y2="982" stroke="#E65100" stroke-width="2.5"/>
+<text x="1700" y="978" font-family="SimHei" font-size="10" fill="#E65100" text-anchor="end">（3 个夹套设备）</text>
+
+<!-- CW 主管 y=922/885: 起点 x=200 → 终点 x=1400 (仅 R-301) -->
+<text x="200" y="881" font-family="SimHei" font-size="10" fill="#1565C0" font-weight="bold">↓ CW 20°C 回水主管</text>
+<line x1="200" y1="885" x2="1400" y2="885" stroke="#1565C0" stroke-width="2.5" stroke-dasharray="6,3"/>
+<text x="1400" y="881" font-family="SimHei" font-size="10" fill="#1565C0" text-anchor="end">（仅 R-301）</text>
+
+<text x="200" y="918" font-family="SimHei" font-size="10" fill="#1565C0" font-weight="bold">↑ CW 5°C 供水主管</text>
+<line x1="200" y1="922" x2="1400" y2="922" stroke="#1565C0" stroke-width="2.5"/>
+<text x="1400" y="918" font-family="SimHei" font-size="10" fill="#1565C0" text-anchor="end">（仅 R-301）</text>
+
+<!-- R-301 4 接管 -->
+<line x1="220" y1="982" x2="220" y2="835" stroke="#E65100" stroke-width="2.5"/>
+<polygon points="212,825 228,825 220,815" fill="#E65100"/>
+<text x="180" y="810" font-family="SimHei" font-size="9" fill="#E65100" font-weight="bold">↑HO 200°C</text>
+
+<line x1="240" y1="945" x2="240" y2="835" stroke="#E65100" stroke-width="2.5" stroke-dasharray="6,3"/>
+<polygon points="232,825 248,825 240,815" fill="#E65100"/>
+<text x="245" y="810" font-family="SimHei" font-size="9" fill="#E65100" font-weight="bold">↓HO 160°C</text>
+
+<line x1="1320" y1="885" x2="1320" y2="835" stroke="#1565C0" stroke-width="2.5" stroke-dasharray="6,3"/>
+<polygon points="1312,825 1328,825 1320,815" fill="#1565C0"/>
+<text x="1325" y="810" font-family="SimHei" font-size="9" fill="#1565C0" font-weight="bold">↓CW 20°C</text>
+
+<line x1="1340" y1="922" x2="1340" y2="835" stroke="#1565C0" stroke-width="2.5"/>
+<polygon points="1332,825 1348,825 1340,815" fill="#1565C0"/>
+<text x="1345" y="810" font-family="SimHei" font-size="9" fill="#1565C0" font-weight="bold">↑CW 5°C</text>
+
+<!-- V-201 2 接管 (整改: 错开) -->
+<line x1="360" y1="982" x2="360" y2="735" stroke="#E65100" stroke-width="2.5"/>
+<polygon points="352,725 368,725 360,715" fill="#E65100"/>
+<text x="338" y="710" font-family="SimHei" font-size="9" fill="#E65100" font-weight="bold">↑HO 200°C</text>
+
+<line x1="380" y1="945" x2="380" y2="735" stroke="#E65100" stroke-width="2.5" stroke-dasharray="6,3"/>
+<polygon points="372,725 388,725 380,715" fill="#E65100"/>
+<text x="383" y="710" font-family="SimHei" font-size="9" fill="#E65100" font-weight="bold">↓HO 160°C</text>
+
+<!-- V-401 2 接管 (整改: x=1660/1680 错开) -->
+<line x1="1660" y1="982" x2="1660" y2="735" stroke="#E65100" stroke-width="2.5"/>
+<polygon points="1652,725 1668,725 1660,715" fill="#E65100"/>
+<text x="1638" y="710" font-family="SimHei" font-size="9" fill="#E65100" font-weight="bold">↑HO 80°C</text>
+
+<line x1="1680" y1="945" x2="1680" y2="735" stroke="#E65100" stroke-width="2.5" stroke-dasharray="6,3"/>
+<polygon points="1672,725 1688,725 1680,715" fill="#E65100"/>
+<text x="1683" y="710" font-family="SimHei" font-size="9" fill="#E65100" font-weight="bold">↓HO 60°C</text>
+
+<!-- R-301 顶部 N₂ 封 (整改: 短横线 x=1270-1290) + 安全阀 -->
+<line x1="1280" y1="60" x2="1280" y2="350" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3"/>
+<line x1="1280" y1="370" x2="1280" y2="400" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3"/>
+<polygon points="1272,390 1288,390 1280,400" fill="#2E7D32"/>
+<text x="1290" y="80" font-family="SimHei" font-size="9" fill="#2E7D32">N₂ 封 ↓</text>
+
+<g transform="translate(1140,400)">
+<line x1="0" y1="0" x2="0" y2="-25" stroke="#000" stroke-width="2"/>
+<path d="M -8 -25 L 0 -42 L 8 -25 Z" fill="#FFF" stroke="#C62828" stroke-width="2"/>
+<rect x="-3" y="-55" width="6" height="13" fill="#000"/>
+<line x1="-6" y1="-55" x2="6" y2="-55" stroke="#000" stroke-width="2"/>
+</g>
+<text x="1100" y="345" font-family="SimHei" font-size="9" fill="#C62828" font-weight="bold">PSV-301</text>
+
+<!-- R-301 仪表群 -->
+<g>
+<circle cx="900" cy="480" r="20" fill="#FFF" stroke="#000" stroke-width="2"/>
+<text x="900" y="475" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">TIRC</text>
+<text x="900" y="488" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">-301</text>
+</g>
+<g>
+<circle cx="900" cy="530" r="20" fill="#FFF" stroke="#000" stroke-width="2"/>
+<text x="900" y="525" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">FRC</text>
+<text x="900" y="538" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">-301</text>
+</g>
+<g>
+<circle cx="900" cy="580" r="20" fill="#FFF" stroke="#000" stroke-width="2"/>
+<text x="900" y="575" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">LRC</text>
+<text x="900" y="588" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">-301</text>
+</g>
+<g>
+<circle cx="900" cy="630" r="20" fill="#FFF" stroke="#000" stroke-width="2"/>
+<text x="900" y="625" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">PIRC</text>
+<text x="900" y="638" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">-301</text>
+</g>
+
+
+<g>
+<circle cx="900" cy="680" r="20" fill="#FFF" stroke="#000" stroke-width="2"/>
+<text x="900" y="675" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">AI</text>
+<text x="900" y="688" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">-301</text>
+</g>
+
+<!-- ★ v6.6 新版: R-301 实线 process tap + 5 条独立虚线 (按控制系统分离) -->
+<!-- 实线 process tap: 仪表 RIGHT → R-301 LEFT -->
+<line x1="920" y1="480" x2="1080" y2="480" stroke="#000" stroke-width="1.5"/>
+<line x1="920" y1="530" x2="1080" y2="530" stroke="#000" stroke-width="1.5"/>
+<line x1="920" y1="580" x2="1080" y2="580" stroke="#000" stroke-width="1.5"/>
+<line x1="920" y1="630" x2="1080" y2="630" stroke="#000" stroke-width="1.5"/>
+<line x1="920" y1="680" x2="1080" y2="680" stroke="#000" stroke-width="1.5"/>
+
+<!-- 虚线控制信号: 5 条独立路径, TIRC-301 双信号在 TOP/BOTTOM 断开 -->
+<!-- TIRC-301 → TCV-301H (HO 加热回路, 从 TOP 900,460 引出, 竖线 x=850 错开) -->
+<line x1="900" y1="460" x2="850" y2="460" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="850" y1="460" x2="850" y2="887" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="850" y1="887" x2="208" y2="887" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="500" y="882" font-family="SimHei" font-size="8" fill="#FF6F00">→ TCV-301H (HO)</text>
+
+<!-- TIRC-301 → TCV-301C (CW 冷却回路, 从 BOTTOM 900,500 引出, 竖线 x=858 错开, 与上条断开) -->
+<line x1="900" y1="500" x2="858" y2="500" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="858" y1="500" x2="858" y2="857" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="858" y1="857" x2="1328" y2="857" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="1080" y="852" font-family="SimHei" font-size="8" fill="#FF6F00">→ TCV-301C (CW)</text>
+
+<!-- FRC-301 → FCV-301 (TDI 流量控制回路, 竖线 x=866 错开) -->
+<line x1="880" y1="530" x2="866" y2="530" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="866" y1="530" x2="866" y2="379" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="866" y1="379" x2="788" y2="379" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="788" y1="379" x2="800" y2="379" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="760" y="374" font-family="SimHei" font-size="8" fill="#FF6F00">→ FCV-301</text>
+
+<!-- LRC-301 → LCV-301 (出料液位控制回路, 竖线 x=874 错开) -->
+<line x1="880" y1="580" x2="874" y2="580" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="874" y1="580" x2="874" y2="849" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="874" y1="849" x2="1478" y2="849" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="1080" y="844" font-family="SimHei" font-size="8" fill="#FF6F00">→ LCV-301</text>
+
+<!-- PIRC-301 → PCV-301 (N₂ 补压控制回路, 竖线 x=842 错开) -->
+<line x1="880" y1="630" x2="842" y2="630" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="842" y1="630" x2="842" y2="350" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="842" y1="350" x2="1268" y2="350" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="1100" y="345" font-family="SimHei" font-size="8" fill="#FF6F00">→ PCV-301 (N₂ 补压)</text>
+
+
+<!-- R-301 SIS 联锁 -->
+<g>
+<circle cx="960" cy="480" r="18" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+<text x="960" y="476" font-family="Arial" font-size="8" font-weight="bold" fill="#C62828" text-anchor="middle">PSHH</text>
+<text x="960" y="487" font-family="Arial" font-size="8" font-weight="bold" fill="#C62828" text-anchor="middle">-301</text>
+</g>
+<g>
+<circle cx="960" cy="520" r="18" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+<text x="960" y="516" font-family="Arial" font-size="8" font-weight="bold" fill="#C62828" text-anchor="middle">TSHH</text>
+<text x="960" y="527" font-family="Arial" font-size="8" font-weight="bold" fill="#C62828" text-anchor="middle">-301</text>
+</g>
+<g>
+<circle cx="960" cy="560" r="18" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+<text x="960" y="556" font-family="Arial" font-size="8" font-weight="bold" fill="#C62828" text-anchor="middle">LSHH</text>
+<text x="960" y="567" font-family="Arial" font-size="8" font-weight="bold" fill="#C62828" text-anchor="middle">-301</text>
+</g>
+
+<!-- TIRC-301 → TCV-301H/C 串级 (横竖折角) -->
+
+
+
+<g transform="translate(220,908)">
+<path d="M -10 -6 L 0 0 L -10 6 Z M 0 0 L 10 -6 L 10 6 Z" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<circle cx="0" cy="-16" r="5" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<line x1="-8" y1="-20" x2="8" y2="-20" stroke="#C62828" stroke-width="1.2"/>
+</g>
+<text x="170" y="912" font-family="SimHei" font-size="8" fill="#C62828">TCV-301H</text>
+
+<g transform="translate(1340,878)">
+<path d="M -10 -6 L 0 0 L -10 6 Z M 0 0 L 10 -6 L 10 6 Z" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<circle cx="0" cy="-16" r="5" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<line x1="-8" y1="-20" x2="8" y2="-20" stroke="#C62828" stroke-width="1.2"/>
+</g>
+<text x="1290" y="882" font-family="SimHei" font-size="8" fill="#C62828">TCV-301C</text>
+
+<!-- FRC-301 → FCV-301 -->
+
+
+<!-- LRC-301 → LCV-301 -->
+
+<g transform="translate(1490,855)">
+<path d="M -10 -6 L 0 0 L -10 6 Z M 0 0 L 10 -6 L 10 6 Z" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<circle cx="0" cy="-16" r="5" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+</g>
+<text x="1495" y="848" font-family="SimHei" font-size="9" fill="#C62828" font-weight="bold">LCV-301</text>
+
+<!-- PIRC-301 → PCV-301 -->
+
+<g transform="translate(1280,350)">
+<path d="M -10 -6 L 0 0 L -10 6 Z M 0 0 L 10 -6 L 10 6 Z" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<circle cx="0" cy="-16" r="5" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<line x1="-8" y1="-20" x2="8" y2="-20" stroke="#C62828" stroke-width="1.2"/>
+</g>
+<text x="1290" y="340" font-family="SimHei" font-size="8" fill="#C62828">PCV-301</text>
+
+<!-- SIS → XV-301 -->
+<line x1="978" y1="480" x2="1480" y2="480" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="1480" y1="480" x2="1480" y2="400" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="978" y1="520" x2="1500" y2="520" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="1500" y1="520" x2="1500" y2="400" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="978" y1="560" x2="1520" y2="560" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="1520" y1="560" x2="1520" y2="400" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="1520" y1="400" x2="1480" y2="400" stroke="#C62828" stroke-width="1" stroke-dasharray="3,2"/>
+
+<g transform="translate(1480,400)">
+<path d="M -10 -6 L 0 0 L -10 6 Z M 0 0 L 10 -6 L 10 6 Z" fill="#FFF" stroke="#C62828" stroke-width="2"/>
+<line x1="-10" y1="-10" x2="10" y2="10" stroke="#C62828" stroke-width="1.5"/>
+<line x1="-10" y1="10" x2="10" y2="-10" stroke="#C62828" stroke-width="1.5"/>
+</g>
+<text x="1495" y="393" font-family="SimHei" font-size="9" fill="#C62828" font-weight="bold">XV-301</text>
+
+<!-- V-201 仪表 -->
+<g>
+<circle cx="260" cy="450" r="18" fill="#FFF" stroke="#000" stroke-width="2"/>
+<text x="260" y="446" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">TIRC</text>
+<text x="260" y="457" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">-201</text>
+</g>
+<g>
+<circle cx="260" cy="490" r="18" fill="#FFF" stroke="#000" stroke-width="2"/>
+<text x="260" y="486" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">LRC</text>
+<text x="260" y="497" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">-201</text>
+</g>
+<g>
+<circle cx="260" cy="530" r="18" fill="#FFF" stroke="#000" stroke-width="2"/>
+<text x="260" y="526" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">PIRC</text>
+<text x="260" y="537" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">-201</text>
+</g>
+
+<!-- ★ v6.6 新版: V-201 实线 process tap + 3 条独立虚线 (按控制系统分离) -->
+<!-- 实线 process tap: 仪表 RIGHT → V-201 LEFT -->
+<line x1="278" y1="450" x2="320" y2="450" stroke="#000" stroke-width="1.5"/>
+<line x1="278" y1="490" x2="320" y2="490" stroke="#000" stroke-width="1.5"/>
+<line x1="278" y1="530" x2="320" y2="530" stroke="#000" stroke-width="1.5"/>
+
+<!-- 虚线控制信号: 3 条独立路径, 无公共竖线 -->
+<!-- TIRC-201 → TCV-201H (HO 控制回路, 竖线 x=228 错开) -->
+<line x1="242" y1="450" x2="228" y2="450" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="228" y1="450" x2="228" y2="858" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="228" y1="858" x2="348" y2="858" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="200" y="850" font-family="SimHei" font-size="8" fill="#FF6F00">→ TCV-201H (HO)</text>
+
+<!-- LRC-201 → LCV-201 (出料液位控制回路, 竖线 x=236 错开) -->
+<line x1="242" y1="490" x2="236" y2="490" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="236" y1="490" x2="236" y2="750" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="236" y1="750" x2="428" y2="750" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="200" y="744" font-family="SimHei" font-size="8" fill="#FF6F00">→ LCV-201 (出料)</text>
+
+<!-- PIRC-201 → PCV-201 (真空控制回路, 竖线 x=244 错开) -->
+<line x1="242" y1="530" x2="244" y2="530" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="244" y1="530" x2="244" y2="360" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="244" y1="360" x2="368" y2="360" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="200" y="354" font-family="SimHei" font-size="8" fill="#FF6F00">→ PCV-201 (VAC)</text>
+
+<!-- ★ v6.2 新增: V-201 TIRC-201 → TCV-201H 信号线 + 阀门 -->
+<g transform="translate(360,858)">
+<path d="M -10 -6 L 0 0 L -10 6 Z M 0 0 L 10 -6 L 10 6 Z" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<circle cx="0" cy="-16" r="5" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<line x1="-8" y1="-20" x2="8" y2="-20" stroke="#C62828" stroke-width="1.2"/>
+</g>
+<text x="300" y="850" font-family="SimHei" font-size="8" fill="#C62828">TCV-201H</text>
+
+
+<!-- ★ v6.2 新增: V-201 PIRC-201 → PCV-201 信号线 + 阀门 -->
+<g transform="translate(380,360)">
+<path d="M -10 -6 L 0 0 L -10 6 Z M 0 0 L 10 -6 L 10 6 Z" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<circle cx="0" cy="-16" r="5" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<line x1="-8" y1="-20" x2="8" y2="-20" stroke="#C62828" stroke-width="1.2"/>
+</g>
+<text x="320" y="350" font-family="SimHei" font-size="8" fill="#C62828">PCV-201</text>
+
+
+
+<!-- V-401 仪表 -->
+<g>
+<circle cx="1580" cy="500" r="18" fill="#FFF" stroke="#000" stroke-width="2"/>
+<text x="1580" y="496" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">TIRC</text>
+<text x="1580" y="507" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">-401</text>
+</g>
+
+<!-- ★ v6.5 新增: TCV-401H 阀门 (V-401 HO 供应立管中点 1660,858) + TIRC-401 信号线 -->
+<g transform="translate(1660,858)">
+<path d="M -10 -6 L 0 0 L -10 6 Z M 0 0 L 10 -6 L 10 6 Z" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<circle cx="0" cy="-16" r="5" fill="#FFF" stroke="#C62828" stroke-width="1.5"/>
+<line x1="-8" y1="-20" x2="8" y2="-20" stroke="#C62828" stroke-width="1.2"/>
+</g>
+<text x="1670" y="848" font-family="SimHei" font-size="8" fill="#C62828">TCV-401H</text>
+<!-- TIRC-401 左侧边界 → TCV-401H (走公共竖线 x=1530) -->
+<line x1="1562" y1="500" x2="1530" y2="500" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="1530" y1="500" x2="1530" y2="858" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="1530" y1="858" x2="1660" y2="858" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="1660" y1="858" x2="1660" y2="837" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="1540" y="495" font-family="SimHei" font-size="8" fill="#FF6F00">→ TCV-401H (HO)</text>
+
+<g>
+<circle cx="1580" cy="540" r="18" fill="#FFF" stroke="#000" stroke-width="2"/>
+<text x="1580" y="536" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">PIRC</text>
+<text x="1580" y="547" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">-401</text>
+</g>
+
+<!-- ★ v6.6 新版: V-401 实线 process tap + 2 条独立虚线 (按控制系统分离) -->
+<!-- 实线 process tap: 仪表 RIGHT → V-401 LEFT -->
+<line x1="1598" y1="500" x2="1620" y2="500" stroke="#000" stroke-width="1.5"/>
+<line x1="1598" y1="540" x2="1620" y2="540" stroke="#000" stroke-width="1.5"/>
+
+<!-- 虚线控制信号: 2 条独立路径, 无公共竖线 -->
+<!-- TIRC-401 → TCV-401H (HO 控制回路, 竖线 x=1552 错开) -->
+<line x1="1562" y1="500" x2="1552" y2="500" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="1552" y1="500" x2="1552" y2="858" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="1552" y1="858" x2="1648" y2="858" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="1540" y="852" font-family="SimHei" font-size="8" fill="#FF6F00">→ TCV-401H (HO)</text>
+
+<!-- PIRC-401 → PCV-401 (真空控制回路) -->
+<line x1="1562" y1="540" x2="1562" y2="360" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="1562" y1="360" x2="1768" y2="360" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="1610" y="355" font-family="SimHei" font-size="8" fill="#FF6F00">→ PCV-401 (VAC)</text>
+
+
+<!-- ★ v6.5 新增: PIRC-401 信号线 → 公共竖线 → PCV-401 (与 TIRC-401 汇合到 x=1530) -->
+<line x1="1562" y1="540" x2="1530" y2="540" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="1530" y1="540" x2="1530" y2="360" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="1530" y1="360" x2="1780" y2="360" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="1780" y1="360" x2="1780" y2="359" stroke="#FF6F00" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="1540" y="535" font-family="SimHei" font-size="8" fill="#FF6F00">→ PCV-401 (VAC)</text>
+
+
+
+
+
+
+
+<!-- 公用工程底层 -->
+<g>
+<rect x="80" y="1340" width="200" height="100" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text x="180" y="1365" font-family="SimHei" font-size="13" font-weight="bold" text-anchor="middle">C-701 冷冻水机组</text>
+<text x="180" y="1385" font-family="SimHei" font-size="10" text-anchor="middle">5°C 供应, 20°C 返回</text>
+<text x="180" y="1405" font-family="SimHei" font-size="10" text-anchor="middle" fill="#1565C0">→ R-301 夹套</text>
+<text x="180" y="1425" font-family="SimHei" font-size="9" text-anchor="middle" fill="#666">（水系统）</text>
+</g>
+<g>
+<rect x="290" y="1340" width="200" height="100" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text x="390" y="1365" font-family="SimHei" font-size="13" font-weight="bold" text-anchor="middle">C-702 冷却塔</text>
+<text x="390" y="1385" font-family="SimHei" font-size="10" text-anchor="middle">30°C 冷却水</text>
+<text x="390" y="1405" font-family="SimHei" font-size="10" text-anchor="middle" fill="#1565C0">→ C-701 冷凝器</text>
+<text x="390" y="1425" font-family="SimHei" font-size="9" text-anchor="middle" fill="#666">（水系统）</text>
+</g>
+<g>
+<rect x="540" y="1340" width="220" height="100" fill="#FFFDE7" stroke="#F57F17" stroke-width="2"/>
+<text x="650" y="1365" font-family="SimHei" font-size="13" font-weight="bold" text-anchor="middle">DCS 控制系统</text>
+<text x="650" y="1385" font-family="SimHei" font-size="10" text-anchor="middle">TIRC/PIRC/FRC/LRC</text>
+<text x="650" y="1405" font-family="SimHei" font-size="10" text-anchor="middle" fill="#C62828">SIS 联锁</text>
+<text x="650" y="1425" font-family="SimHei" font-size="9" text-anchor="middle" fill="#666">（电系统）</text>
+</g>
+<g>
+<rect x="770" y="1340" width="220" height="100" fill="#FFFDE7" stroke="#F57F17" stroke-width="2"/>
+<text x="880" y="1365" font-family="SimHei" font-size="13" font-weight="bold" text-anchor="middle">UPS + 柴油应急电源</text>
+<text x="880" y="1385" font-family="SimHei" font-size="10" text-anchor="middle">失电时维持 SIS + 照明</text>
+<text x="880" y="1405" font-family="SimHei" font-size="10" text-anchor="middle">→ 30min 应急</text>
+<text x="880" y="1425" font-family="SimHei" font-size="9" text-anchor="middle" fill="#666">（电系统）</text>
+</g>
+<g>
+<rect x="1020" y="1340" width="220" height="100" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text x="1130" y="1365" font-family="SimHei" font-size="13" font-weight="bold" fill="#E65100" text-anchor="middle">E-701 导热油炉</text>
+<text x="1130" y="1385" font-family="SimHei" font-size="10" text-anchor="middle">200°C 供应, 160°C 返回</text>
+<text x="1130" y="1405" font-family="SimHei" font-size="10" text-anchor="middle" fill="#E65100">→ 3 个夹套设备</text>
+<text x="1130" y="1425" font-family="SimHei" font-size="9" text-anchor="middle" fill="#666">（热源系统）</text>
+</g>
+<g>
+<rect x="1290" y="1340" width="220" height="100" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text x="1400" y="1365" font-family="SimHei" font-size="13" font-weight="bold" text-anchor="middle">N₂ 钢瓶/PSA 制氮</text>
+<text x="1400" y="1385" font-family="SimHei" font-size="10" text-anchor="middle">99.999% 露点 -40°C</text>
+<text x="1400" y="1405" font-family="SimHei" font-size="10" text-anchor="middle" fill="#2E7D32">0.6 MPa.G</text>
+<text x="1400" y="1425" font-family="SimHei" font-size="9" text-anchor="middle" fill="#666">→ N₂ 封/吹扫/压料</text>
+<text x="1400" y="1438" font-family="SimHei" font-size="9" text-anchor="middle" fill="#666">（气系统）</text>
+</g>
+<line x1="1400" y1="1340" x2="1400" y2="60" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3"/>
+<line x1="1400" y1="1340" x2="380" y2="1340" stroke="#E65100" stroke-width="2.5"/>
+<line x1="1400" y1="1340" x2="1700" y2="1340" stroke="#E65100" stroke-width="2.5"/>
+<g>
+<rect x="1520" y="1340" width="220" height="100" fill="#FFFDE7" stroke="#F57F17" stroke-width="2"/>
+<text x="1630" y="1365" font-family="SimHei" font-size="13" font-weight="bold" text-anchor="middle">N₂ 主管接入区</text>
+<text x="1630" y="1385" font-family="SimHei" font-size="10" text-anchor="middle">（N₂ 主管 y=60）</text>
+<text x="1630" y="1405" font-family="SimHei" font-size="10" text-anchor="middle" fill="#2E7D32">→ 顶部 N₂ 设备</text>
+<text x="1630" y="1425" font-family="SimHei" font-size="9" text-anchor="middle" fill="#666">（真空泵移主流程区）</text>
+</g>
+<g>
+<rect x="1750" y="1340" width="220" height="100" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+<text x="1860" y="1365" font-family="SimHei" font-size="13" font-weight="bold" text-anchor="middle">应急淋浴+洗眼器+通风</text>
+<text x="1860" y="1385" font-family="SimHei" font-size="10" text-anchor="middle">⚠ TDI 防护 + 6% 氨水</text>
+<text x="1860" y="1405" font-family="SimHei" font-size="10" text-anchor="middle" fill="#C62828">DETDA 操作 PPE</text>
+<text x="1860" y="1425" font-family="SimHei" font-size="9" text-anchor="middle" fill="#666">（安全防护）</text>
+</g>
+<g>
+<rect x="1980" y="1340" width="180" height="100" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+<text x="2070" y="1365" font-family="SimHei" font-size="13" font-weight="bold" text-anchor="middle">E-702 蒸汽锅炉</text>
+<text x="2070" y="1385" font-family="SimHei" font-size="10" text-anchor="middle">0.3 MPa 蒸汽</text>
+<text x="2070" y="1405" font-family="SimHei" font-size="10" text-anchor="middle" fill="#666">→ V-101/V-102 伴热</text>
+<text x="2070" y="1425" font-family="SimHei" font-size="9" text-anchor="middle" fill="#666">（辅助热源）</text>
+</g>
+
+<!-- 公用工程主管连线 (整改: 删除 O-201/O-401 → y=320 主管) -->
+<line x1="1130" y1="1340" x2="1130" y2="982" stroke="#E65100" stroke-width="2.5"/>
+<line x1="280" y1="1390" x2="280" y2="922" stroke="#1565C0" stroke-width="2.5"/>
+<line x1="280" y1="922" x2="200" y2="922" stroke="#1565C0" stroke-width="2.5"/>
+<line x1="280" y1="1390" x2="280" y2="885" stroke="#1565C0" stroke-width="2.5" stroke-dasharray="6,3"/>
+<line x1="280" y1="885" x2="200" y2="885" stroke="#1565C0" stroke-width="2.5" stroke-dasharray="6,3"/>
+
+</svg>
+
+<!-- 底部备注 -->
+<div style="background:#FFF8E1;border:2px solid #FF6F00;margin:10px 20px;padding:15px;">
+<h3 style="margin:0 0 8px 0;color:#E65100;font-size:14px;">备注 1：单元划分说明（参考）</h3>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%;">
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999; padding:4px;">单元</th><th style="border:1px solid #999; padding:4px;">功能</th><th style="border:1px solid #999; padding:4px;">设备</th><th style="border:1px solid #999; padding:4px;">主要操作</th>
+</tr>
+<tr><td style="border:1px solid #999; padding:4px; text-align:center;"><b>100</b></td><td style="border:1px solid #999; padding:4px;">原料储存</td><td style="border:1px solid #999; padding:4px;">V-101/V-102/V-103</td><td style="border:1px solid #999; padding:4px;">PTMG/TDI/DETDA 周用量储存</td></tr>
+<tr><td style="border:1px solid #999; padding:4px; text-align:center;"><b>200</b></td><td style="border:1px solid #999; padding:4px;">PTMG 脱水（真空）</td><td style="border:1px solid #999; padding:4px;">V-201</td><td style="border:1px solid #999; padding:4px;">10 mbar 真空脱水 120°C</td></tr>
+<tr><td style="border:1px solid #999; padding:4px; text-align:center;"><b>300</b></td><td style="border:1px solid #999; padding:4px;">预聚反应 (CPU 核心)</td><td style="border:1px solid #999; padding:4px;">R-301</td><td style="border:1px solid #999; padding:4px;">80°C N₂ 封 NCO%=4.7±0.3%</td></tr>
+<tr><td style="border:1px solid #999; padding:4px; text-align:center;"><b>400</b></td><td style="border:1px solid #999; padding:4px;">预聚体脱气（真空）</td><td style="border:1px solid #999; padding:4px;">V-401</td><td style="border:1px solid #999; padding:4px;">10 mbar 真空脱气泡 80°C</td></tr>
+<tr><td style="border:1px solid #999; padding:4px; text-align:center;"><b>600</b></td><td style="border:1px solid #999; padding:4px;">混合浇注</td><td style="border:1px solid #999; padding:4px;">MX-601 + P-601</td><td style="border:1px solid #999; padding:4px;">静态混合 + 80→100°C</td></tr>
+<tr><td style="border:1px solid #999; padding:4px; text-align:center;"><b>700</b></td><td style="border:1px solid #999; padding:4px;">后熟化</td><td style="border:1px solid #999; padding:4px;">烘箱</td><td style="border:1px solid #999; padding:4px;">100°C × 16h</td></tr>
+</table>
+
+<h3 style="margin:12px 0 6px 0;color:#E65100;font-size:13px;">备注 2：DETDA 工艺说明（⭐ 改用液体扩链剂）</h3>
+<p style="margin:4px 0;font-size:11px;line-height:1.6;">
+• <b>配方</b>：PTMG : TDI : DETDA = <b>100 : 20.4 : 11.0</b>（重量比），NCO/OH=1.05，预聚体 NCO%=4.7±0.3%<br>
+• <b>DETDA</b> 是室温液体（黏度 280 cP@25°C，密度 1.02 g/cm³），<b>省去 V-501 熔化工序</b>，<b>省去 O-501 真空泵</b><br>
+• <b>V-103 DETDA 储罐</b> 25L 304SS 常温 25°C，<b>需要 N₂ 封</b>（DETDA 易氧化变色）<br>
+• <b>DETDA 投料</b>：用 P-501 齿轮泵（0.05 m³/h 0.37 kW）从 V-103 → MX-601 侧进<br>
+• <b>DETDA 反应速度比 MOCA 快 30 倍</b>，R-301 反应时间缩短至 1.5-2h<br>
+• <b>DETDA 蒸汽压高</b>，V-401 脱气时间略延长（30-45 min）<br>
+• <b>V-104 DOS 增塑剂已取消</b>（DETDA 体系不必须）
+</p>
+
+<h3 style="margin:12px 0 6px 0;color:#E65100;font-size:13px;">备注 3：N₂ / 真空 / CW / HO 主管整改（⭐ 不延伸原则）</h3>
+<p style="margin:4px 0;font-size:11px;line-height:1.6;">
+• <b>N₂ 主管段 1</b>：x=200-620（V-101/V-102/V-103 顶部 N₂ 封），<b>不延伸到 V-201 位置</b><br>
+• <b>N₂ 主管段 2</b>：x=1270-1290 短横线（<b>只 R-301 顶部 N₂ 封</b>）<br>
+• <b>HO 主管 y=982/945</b>：x=220-1700（<b>起点连 R-301 左接管，终点 V-401 接管位置</b>），<b>进 V-401 后右边不延伸</b><br>
+• <b>CW 主管 y=922/885</b>：x=200-1400（仅 R-301）<br>
+• <b>真空管路</b>：V-201 + V-401 → 排气总管 y=320 → T-601 活性炭 → X-601 RTO → 排放<br>
+• <b>V-401 进/出口接管错开</b>：进口 NO-401A x=1700，出口 NO-401B x=1740（避免 R-301→V-401 与 V-401→MX-601 流股在 x=1720 处交叉）<br>
+• <b>管路原则</b>：所有主管只延伸到最后一个需要设备，<b>不悬空</b>，<b>不延伸</b>
+</p>
+
+<h3 style="margin:12px 0 6px 0;color:#E65100;font-size:13px;">备注 5：阀门符号说明（ISA-S5.1 / GB/T 2625 标准）</h3>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999; padding:4px;">代号</th>
+<th style="border:1px solid #999; padding:4px;">符号</th>
+<th style="border:1px solid #999; padding:4px;">阀门类型</th>
+<th style="border:1px solid #999; padding:4px;">功能</th>
+<th style="border:1px solid #999; padding:4px;">图上位置</th>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>Z-102</b></td>
+<td style="border:1px solid #999; padding:4px;">▷◁（黑色）</td>
+<td style="border:1px solid #999; padding:4px;">截止阀（球阀/蝶阀）</td>
+<td style="border:1px solid #999; padding:4px;">正常开关</td>
+<td style="border:1px solid #999; padding:4px;">V-102 出料管</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>XV-102</b></td>
+<td style="border:1px solid #999; padding:4px;">▷◁+✕（红色）</td>
+<td style="border:1px solid #999; padding:4px;">紧急切断阀（ESD）</td>
+<td style="border:1px solid #999; padding:4px;">紧急时切断 TDI 进料（SIS 联锁）</td>
+<td style="border:1px solid #999; padding:4px;">V-102 出料管</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>XV-301</b></td>
+<td style="border:1px solid #999; padding:4px;">▷◁+✕（红色）</td>
+<td style="border:1px solid #999; padding:4px;">紧急切断阀（ESD）</td>
+<td style="border:1px solid #999; padding:4px;">紧急时切断 R-301 进料（SIS 联锁）</td>
+<td style="border:1px solid #999; padding:4px;">R-301 进料管</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>FCV-301</b></td>
+<td style="border:1px solid #999; padding:4px;">▷◁+⊕（红色）</td>
+<td style="border:1px solid #999; padding:4px;">流量调节阀</td>
+<td style="border:1px solid #999; padding:4px;">FRC-301 控制 TDI 进料流量</td>
+<td style="border:1px solid #999; padding:4px;">TDI 进 R-301 管</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>PCV-301</b></td>
+<td style="border:1px solid #999; padding:4px;">▷◁+⊕（红色）</td>
+<td style="border:1px solid #999; padding:4px;">压力调节阀</td>
+<td style="border:1px solid #999; padding:4px;">PIRC-301 控制 R-301 N₂ 补压（0.05 MPa.G）</td>
+<td style="border:1px solid #999; padding:4px;">R-301 N₂ 补压管</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>LCV-301</b></td>
+<td style="border:1px solid #999; padding:4px;">▷◁+⊕（红色）</td>
+<td style="border:1px solid #999; padding:4px;">液位调节阀</td>
+<td style="border:1px solid #999; padding:4px;">LRC-301 控制 R-301 出料液位</td>
+<td style="border:1px solid #999; padding:4px;">R-301 出料管</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>TCV-301H</b></td>
+<td style="border:1px solid #999; padding:4px;">▷◁+⊕（红色）</td>
+<td style="border:1px solid #999; padding:4px;">温度调节阀（HO 加热）</td>
+<td style="border:1px solid #999; padding:4px;">TIRC-301 控制 HO 供油温度（200°C）</td>
+<td style="border:1px solid #999; padding:4px;">R-301 HO 供油管</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>TCV-301C</b></td>
+<td style="border:1px solid #999; padding:4px;">▷◁+⊕（红色）</td>
+<td style="border:1px solid #999; padding:4px;">温度调节阀（CW 冷却）</td>
+<td style="border:1px solid #999; padding:4px;">TIRC-301 控制 CW 供水流量（5°C）</td>
+<td style="border:1px solid #999; padding:4px;">R-301 CW 供水管</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>PSV-301</b></td>
+<td style="border:1px solid #999; padding:4px;">弹簧+阀（红色）</td>
+<td style="border:1px solid #999; padding:4px;">压力安全阀（弹簧式）</td>
+<td style="border:1px solid #999; padding:4px;">R-301 超压时自动开启泄放</td>
+<td style="border:1px solid #999; padding:4px;">R-301 顶部</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>▷◁（黑色）</b></td>
+<td style="border:1px solid #999; padding:4px;">▷◁（黑色）</td>
+<td style="border:1px solid #999; padding:4px;">普通截止阀</td>
+<td style="border:1px solid #999; padding:4px;">各管路手动开关</td>
+<td style="border:1px solid #999; padding:4px;">多个位置</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>⊕</b>（圆顶）</td>
+<td style="border:1px solid #999; padding:4px;">—</td>
+<td style="border:1px solid #999; padding:4px;">调节阀执行器</td>
+<td style="border:1px solid #999; padding:4px;">自动调节（DCS 控制）</td>
+<td style="border:1px solid #999; padding:4px;">FCV/PCV/LCV/TCV 上方</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>✕</b>（交叉）</td>
+<td style="border:1px solid #999; padding:4px;">—</td>
+<td style="border:1px solid #999; padding:4px;">紧急切断标识</td>
+<td style="border:1px solid #999; padding:4px;">SIS 联锁触发自动切断</td>
+<td style="border:1px solid #999; padding:4px;">XV-102/XV-301 上方</td>
+</tr>
+</table>
+
+<h3 style="margin:12px 0 6px 0;color:#E65100;font-size:13px;">备注 6：字母代号说明（ISA-S5.1 / GB/T 2625 / HG/T 20505 标准）</h3>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（1）介质代号（流股/物料标识）</p>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999; padding:4px;">代号</th>
+<th style="border:1px solid #999; padding:4px;">介质名称</th>
+<th style="border:1px solid #999; padding:4px;">CAS/化学式</th>
+<th style="border:1px solid #999; padding:4px;">危险特性</th>
+</tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>PTMG</b></td><td style="border:1px solid #999; padding:4px;">聚四氢呋喃醚二醇</td><td style="border:1px solid #999; padding:4px;">HO-(CH₂CH₂CH₂CH₂-O)ₙ-H (MW=1000)</td><td style="border:1px solid #999; padding:4px;">常温液体，可燃</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>TDI</b></td><td style="border:1px solid #999; padding:4px;">甲苯二异氰酸酯（80/20）</td><td style="border:1px solid #999; padding:4px;">CH₃C₆H₃(NCO)₂ CAS 584-84-9</td><td style="border:1px solid #999; padding:4px;">⚠ 甲类毒物，剧毒</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>DETDA</b></td><td style="border:1px solid #999; padding:4px;">二乙基甲苯二胺</td><td style="border:1px solid #999; padding:4px;">(C₂H₅)₂CH₃C₆H₂(NH₂)₂ CAS 68479-98-1</td><td style="border:1px solid #999; padding:4px;">⚠ 毒害品（液体扩链剂）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>MOCA</b></td><td style="border:1px solid #999; padding:4px;">3,3'-二氯-4,4'-二氨基二苯甲烷</td><td style="border:1px solid #999; padding:4px;">CAS 101-14-4</td><td style="border:1px solid #999; padding:4px;">❌ 已取消（改用 DETDA）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>DOS</b></td><td style="border:1px solid #999; padding:4px;">癸二酸二辛酯（增塑剂）</td><td style="border:1px solid #999; padding:4px;">C₂₆H₅₀O₄</td><td style="border:1px solid #999; padding:4px;">❌ 已取消</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>PU</b></td><td style="border:1px solid #999; padding:4px;">聚氨酯弹性体</td><td style="border:1px solid #999; padding:4px;">-(-NHCOO-)ₙ-</td><td style="border:1px solid #999; padding:4px;">成品</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>CPU</b></td><td style="border:1px solid #999; padding:4px;">浇注型聚氨酯</td><td style="border:1px solid #999; padding:4px;">Cast Polyurethane</td><td style="border:1px solid #999; padding:4px;">成品</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>N₂</b></td><td style="border:1px solid #999; padding:4px;">氮气</td><td style="border:1px solid #999; padding:4px;">N₂ 99.999% 露点-40°C</td><td style="border:1px solid #999; padding:4px;">惰性气体（窒息风险）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>CW</b></td><td style="border:1px solid #999; padding:4px;">循环冷冻水</td><td style="border:1px solid #999; padding:4px;">H₂O 5°C/20°C</td><td style="border:1px solid #999; padding:4px;">—</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>HO</b></td><td style="border:1px solid #999; padding:4px;">导热油（热传导油）</td><td style="border:1px solid #999; padding:4px;">氢化三联苯类</td><td style="border:1px solid #999; padding:4px;">可燃（闪点>180°C）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>VAC</b></td><td style="border:1px solid #999; padding:4px;">真空（真空排气）</td><td style="border:1px solid #999; padding:4px;">5-100 mbar</td><td style="border:1px solid #999; padding:4px;">含 TDI/DETDA 蒸汽</td></tr>
+</table>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（2）流股代号（S-XXX 流股编号）</p>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999; padding:4px;">流股代号</th>
+<th style="border:1px solid #999; padding:4px;">介质</th>
+<th style="border:1px solid #999; padding:4px;">路径</th>
+<th style="border:1px solid #999; padding:4px;">流量</th>
+</tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>S-101</b></td><td style="border:1px solid #999; padding:4px;">PTMG</td><td style="border:1px solid #999; padding:4px;">V-101 → P-101 → V-201</td><td style="border:1px solid #999; padding:4px;">0.5 m³/h</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>S-102</b></td><td style="border:1px solid #999; padding:4px;">TDI（N₂ 压料）</td><td style="border:1px solid #999; padding:4px;">V-102 → R-301</td><td style="border:1px solid #999; padding:4px;">0.1 m³/h</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>S-103</b></td><td style="border:1px solid #999; padding:4px;">DETDA（液体）</td><td style="border:1px solid #999; padding:4px;">V-103 → P-501 → MX-601</td><td style="border:1px solid #999; padding:4px;">0.05 m³/h</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>S-201</b></td><td style="border:1px solid #999; padding:4px;">合格 PTMG</td><td style="border:1px solid #999; padding:4px;">V-201 → P-201 → R-301</td><td style="border:1px solid #999; padding:4px;">0.5 m³/h</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>S-301</b></td><td style="border:1px solid #999; padding:4px;">预聚体</td><td style="border:1px solid #999; padding:4px;">R-301 → P-301 → V-401</td><td style="border:1px solid #999; padding:4px;">0.5 m³/h</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>S-401</b></td><td style="border:1px solid #999; padding:4px;">脱气预聚体</td><td style="border:1px solid #999; padding:4px;">V-401 → P-401 → MX-601</td><td style="border:1px solid #999; padding:4px;">0.5 m³/h</td></tr>
+</table>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（3）设备代号（HG/T 20505 工艺设备位号编制规则）</p>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999; padding:4px;">第一字母</th>
+<th style="border:1px solid #999; padding:4px;">设备类型</th>
+<th style="border:1px solid #999; padding:4px;">第一字母</th>
+<th style="border:1px solid #999; padding:4px;">设备类型</th>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>V</b></td>
+<td style="border:1px solid #999; padding:4px;">容器（Vessel）储罐/反应器/罐</td>
+<td style="border:1px solid #999; padding:4px;"><b>P</b></td>
+<td style="border:1px solid #999; padding:4px;">泵（Pump）</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>R</b></td>
+<td style="border:1px solid #999; padding:4px;">反应器（Reactor）</td>
+<td style="border:1px solid #999; padding:4px;"><b>C</b></td>
+<td style="border:1px solid #999; padding:4px;">压缩机/冷却塔（Compressor/Column）</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>T</b></td>
+<td style="border:1px solid #999; padding:4px;">塔（Tower）</td>
+<td style="border:1px solid #999; padding:4px;"><b>E</b></td>
+<td style="border:1px solid #999; padding:4px;">换热器/加热炉（Exchanger）</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>M</b></td>
+<td style="border:1px solid #999; padding:4px;">混合器（Mixer）</td>
+<td style="border:1px solid #999; padding:4px;"><b>O</b></td>
+<td style="border:1px solid #999; padding:4px;">真空泵（O 起源荷兰语 Onderdruk 真空）</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>X</b></td>
+<td style="border:1px solid #999; padding:4px;">焚烧炉/废气处理</td>
+<td style="border:1px solid #999; padding:4px;"><b>Q</b></td>
+<td style="border:1px solid #999; padding:4px;">在线分析仪（Quality）</td>
+</tr>
+</table>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（4）阀门代号（GB/T 2625 / ISA-S5.1 阀门标识）</p>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999; padding:4px;">代号</th>
+<th style="border:1px solid #999; padding:4px;">阀门类型</th>
+<th style="border:1px solid #999; padding:4px;">英文</th>
+<th style="border:1px solid #999; padding:4px;">代号</th>
+<th style="border:1px solid #999; padding:4px;">阀门类型</th>
+<th style="border:1px solid #999; padding:4px;">英文</th>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>Z</b></td>
+<td style="border:1px solid #999; padding:4px;">截止阀</td>
+<td style="border:1px solid #999; padding:4px;">Globe Valve</td>
+<td style="border:1px solid #999; padding:4px;"><b>FCV</b></td>
+<td style="border:1px solid #999; padding:4px;">流量调节阀</td>
+<td style="border:1px solid #999; padding:4px;">Flow Control Valve</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>XV</b></td>
+<td style="border:1px solid #999; padding:4px;">紧急切断阀</td>
+<td style="border:1px solid #999; padding:4px;">Emergency Shutdown</td>
+<td style="border:1px solid #999; padding:4px;"><b>PCV</b></td>
+<td style="border:1px solid #999; padding:4px;">压力调节阀</td>
+<td style="border:1px solid #999; padding:4px;">Pressure Control Valve</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>ZV</b></td>
+<td style="border:1px solid #999; padding:4px;">真空阀</td>
+<td style="border:1px solid #999; padding:4px;">Vacuum Valve</td>
+<td style="border:1px solid #999; padding:4px;"><b>LCV</b></td>
+<td style="border:1px solid #999; padding:4px;">液位调节阀</td>
+<td style="border:1px solid #999; padding:4px;">Level Control Valve</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>PSV</b></td>
+<td style="border:1px solid #999; padding:4px;">压力安全阀</td>
+<td style="border:1px solid #999; padding:4px;">Pressure Safety Valve</td>
+<td style="border:1px solid="999; padding:4px;"><b>TCV</b></td>
+<td style="border:1px solid #999; padding:4px;">温度调节阀</td>
+<td style="border:1px solid #999; padding:4px;">Temperature Control Valve</td>
+</tr>
+</table>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（5）仪表代号（ISA-S5.1 仪表功能代号）</p>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999; padding:4px;">第一位字母</th>
+<th style="border:1px solid #999; padding:4px;">测量变量</th>
+<th style="border:1px solid #999; padding:4px;">后续字母</th>
+<th style="border:1px solid #999; padding:4px;">仪表功能</th>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>T</b></td>
+<td style="border:1px solid #999; padding:4px;">温度 Temperature</td>
+<td style="border:1px solid #999; padding:4px;"><b>I</b></td>
+<td style="border:1px solid #999; padding:4px;">指示 Indication</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>P</b></td>
+<td style="border:1px solid #999; padding:4px;">压力 Pressure</td>
+<td style="border:1px solid #999; padding:4px;"><b>R</b></td>
+<td style="border:1px solid #999; padding:4px;">记录 Recording</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>F</b></td>
+<td style="border:1px solid #999; padding:4px;">流量 Flow</td>
+<td style="border:1px solid #999; padding:4px;"><b>C</b></td>
+<td style="border:1px solid #999; padding:4px;">控制 Control</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>L</b></td>
+<td style="border:1px solid #999; padding:4px;">液位 Level</td>
+<td style="border:1px solid #999; padding:4px;"><b>A</b></td>
+<td style="border:1px solid #999; padding:4px;">报警 Alarm</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>A</b></td>
+<td style="border:1px solid #999; padding:4px;">分析 Analysis</td>
+<td style="border:1px solid #999; padding:4px;"><b>S</b></td>
+<td style="border:1px solid #999; padding:4px;">开关 Switch</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>Q</b></td>
+<td style="border:1px solid #999; padding:4px;">质量 Quality</td>
+<td style="border:1px solid #999; padding:4px;"><b>T</b></td>
+<td style="border:1px solid #999; padding:4px;">变送 Transmit</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>H/HH</b></td>
+<td style="border:1px solid #999; padding:4px;">高/高高限位</td>
+<td style="border:1px solid #999; padding:4px;"><b>L/LL</b></td>
+<td style="border:1px solid="999; padding:4px;">低/低低限位</td>
+</tr>
+</table>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（6）管路代号（GB/T 6567.2 管路标识）</p>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999; padding:4px;">代号</th>
+<th style="border:1px solid #999; padding:4px;">管路类型</th>
+<th style="border:1px solid #999; padding:4px;">代号</th>
+<th style="border:1px solid #999; padding:4px;">管路类型</th>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>主工艺（黑实线）</b></td>
+<td style="border:1px solid #999; padding:4px;">物料管路（粗实线 2.5px）</td>
+<td style="border:1px solid #999; padding:4px;"><b>VAC（黑虚线）</b></td>
+<td style="border:1px solid #999; padding:4px;">真空管路（点划线）</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>N₂（绿虚线）</b></td>
+<td style="border:1px solid #999; padding:4px;">氮气管路（绿色虚线）</td>
+<td style="border:1px solid #999; padding:4px;"><b>信号线（橙虚线）</b></td>
+<td style="border:1px solid #999; padding:4px;">仪表信号线（橙色虚线 1px）</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>CW（蓝实线）</b></td>
+<td style="border:1px solid #999; padding:4px;">冷冻水管路（蓝色实线 2.5px）</td>
+<td style="border:1px solid #999; padding:4px;"><b>CW 回（蓝虚线）</b></td>
+<td style="border:1px solid #999; padding:4px;">冷冻水返回（蓝色虚线 2.5px）</td>
+</tr>
+<tr>
+<td style="border:1px solid #999; padding:4px;"><b>HO（橙实线）</b></td>
+<td style="border:1px solid #999; padding:4px;">导热油管路（橙色实线 2.5px）</td>
+<td style="border:1px solid #999; padding:4px;"><b>HO 回（橙虚线）</b></td>
+<td style="border:1px solid="999; padding:4px;">导热油返回（橙色虚线 2.5px）</td>
+</tr>
+</table>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（7）S-XXX 流股编号规则</p>
+<p style="margin:4px 0;font-size:10px;line-height:1.6;">
+S-XXX 第一位数字 = 单元号（1=100 原料储存, 2=200 脱水, 3=300 预聚, 4=400 脱气, 5=500 MOCA 取消, 6=600 混合浇注, 7=700 后熟化）<br>
+S-101/201/301/401/501/601 = 100/200/300/400/500/600 单元内的第 N 个流股
+</p>
+
+<h3 style="margin:12px 0 6px 0;color:#E65100;font-size:13px;">备注 5：阀门符号说明（ISA-S5.1 / GB/T 2625 标准）</h3>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;">
+<th style="border:1px solid #999; padding:4px;">代号</th>
+<th style="border:1px solid #999; padding:4px;">符号</th>
+<th style="border:1px solid #999; padding:4px;">阀门类型</th>
+<th style="border:1px solid #999; padding:4px;">功能</th>
+<th style="border:1px solid #999; padding:4px;">图上位置</th>
+</tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>Z-102</b></td><td style="border:1px solid #999; padding:4px;">▷◁（黑色）</td><td style="border:1px solid #999; padding:4px;">截止阀（球阀/蝶阀）</td><td style="border:1px solid #999; padding:4px;">正常开关</td><td style="border:1px solid #999; padding:4px;">V-102 出料管</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>XV-102</b></td><td style="border:1px solid #999; padding:4px;">▷◁+✕（红色）</td><td style="border:1px solid #999; padding:4px;">紧急切断阀（ESD）</td><td style="border:1px solid #999; padding:4px;">紧急时切断 TDI 进料（SIS 联锁）</td><td style="border:1px solid #999; padding:4px;">V-102 出料管</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>XV-301</b></td><td style="border:1px solid #999; padding:4px;">▷◁+✕（红色）</td><td style="border:1px solid #999; padding:4px;">紧急切断阀（ESD）</td><td style="border:1px solid #999; padding:4px;">紧急时切断 R-301 进料（SIS 联锁）</td><td style="border:1px solid #999; padding:4px;">R-301 进料管</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>FCV-301</b></td><td style="border:1px solid #999; padding:4px;">▷◁+⊕（红色）</td><td style="border:1px solid #999; padding:4px;">流量调节阀</td><td style="border:1px solid #999; padding:4px;">FRC-301 控制 TDI 进料流量</td><td style="border:1px solid #999; padding:4px;">TDI 进 R-301 管</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>PCV-301</b></td><td style="border:1px solid #999; padding:4px;">▷◁+⊕（红色）</td><td style="border:1px solid #999; padding:4px;">压力调节阀</td><td style="border:1px solid #999; padding:4px;">PIRC-301 控制 R-301 N₂ 补压（0.05 MPa.G）</td><td style="border:1px solid #999; padding:4px;">R-301 N₂ 补压管</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>LCV-301</b></td><td style="border:1px solid #999; padding:4px;">▷◁+⊕（红色）</td><td style="border:1px solid #999; padding:4px;">液位调节阀</td><td style="border:1px solid #999; padding:4px;">LRC-301 控制 R-301 出料液位</td><td style="border:1px solid #999; padding:4px;">R-301 出料管</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>TCV-301H</b></td><td style="border:1px solid #999; padding:4px;">▷◁+⊕（红色）</td><td style="border:1px solid #999; padding:4px;">温度调节阀（HO 加热）</td><td style="border:1px solid #999; padding:4px;">TIRC-301 控制 HO 供油温度（200°C）</td><td style="border:1px solid #999; padding:4px;">R-301 HO 供油管</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>TCV-301C</b></td><td style="border:1px solid #999; padding:4px;">▷◁+⊕（红色）</td><td style="border:1px solid #999; padding:4px;">温度调节阀（CW 冷却）</td><td style="border:1px solid #999; padding:4px;">TIRC-301 控制 CW 供水流量（5°C）</td><td style="border:1px solid #999; padding:4px;">R-301 CW 供水管</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>PSV-301</b></td><td style="border:1px solid #999; padding:4px;">弹簧+阀（红色）</td><td style="border:1px solid #999; padding:4px;">压力安全阀（弹簧式）</td><td style="border:1px solid #999; padding:4px;">R-301 超压时自动开启泄放</td><td style="border:1px solid #999; padding:4px;">R-301 顶部</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>▷◁</b>（黑色）</td><td style="border:1px solid #999; padding:4px;">▷◁（黑色）</td><td style="border:1px solid #999; padding:4px;">普通截止阀</td><td style="border:1px solid #999; padding:4px;">各管路手动开关</td><td style="border:1px solid #999; padding:4px;">多个位置</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>⊕</b>（圆顶）</td><td style="border:1px solid #999; padding:4px;">—</td><td style="border:1px solid #999; padding:4px;">调节阀执行器</td><td style="border:1px solid #999; padding:4px;">自动调节（DCS 控制）</td><td style="border:1px solid #999; padding:4px;">FCV/PCV/LCV/TCV 上方</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>✕</b>（交叉）</td><td style="border:1px solid #999; padding:4px;">—</td><td style="border:1px solid #999; padding:4px;">紧急切断标识</td><td style="border:1px solid #999; padding:4px;">SIS 联锁触发自动切断</td><td style="border:1px solid #999; padding:4px;">XV-102/XV-301 上方</td></tr>
+</table>
+
+<h3 style="margin:12px 0 6px 0;color:#E65100;font-size:13px;">备注 6：字母代号说明（ISA-S5.1 / GB/T 2625 / HG/T 20505 标准）</h3>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（1）介质代号（流股/物料标识）</p>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;"><th style="border:1px solid #999; padding:4px;">代号</th><th style="border:1px solid #999; padding:4px;">介质名称</th><th style="border:1px solid #999; padding:4px;">CAS/化学式</th><th style="border:1px solid #999; padding:4px;">危险特性</th></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>PTMG</b></td><td style="border:1px solid #999; padding:4px;">聚四氢呋喃醚二醇</td><td style="border:1px solid #999; padding:4px;">HO-(CH₂CH₂CH₂CH₂-O)ₙ-H (MW=1000)</td><td style="border:1px solid #999; padding:4px;">常温液体，可燃</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>TDI</b></td><td style="border:1px solid #999; padding:4px;">甲苯二异氰酸酯（80/20）</td><td style="border:1px solid #999; padding:4px;">CH₃C₆H₃(NCO)₂ CAS 584-84-9</td><td style="border:1px solid #999; padding:4px;">⚠ 甲类毒物，剧毒</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>DETDA</b></td><td style="border:1px solid #999; padding:4px;">二乙基甲苯二胺</td><td style="border:1px solid #999; padding:4px;">(C₂H₅)₂CH₃C₆H₂(NH₂)₂ CAS 68479-98-1</td><td style="border:1px solid #999; padding:4px;">⚠ 毒害品（液体扩链剂）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>MOCA</b></td><td style="border:1px solid #999; padding:4px;">3,3'-二氯-4,4'-二氨基二苯甲烷</td><td style="border:1px solid #999; padding:4px;">CAS 101-14-4</td><td style="border:1px solid #999; padding:4px;">❌ 已取消（改用 DETDA）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>DOS</b></td><td style="border:1px solid #999; padding:4px;">癸二酸二辛酯（增塑剂）</td><td style="border:1px solid #999; padding:4px;">C₂₆H₅₀O₄</td><td style="border:1px solid #999; padding:4px;">❌ 已取消</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>PU</b></td><td style="border:1px solid #999; padding:4px;">聚氨酯弹性体</td><td style="border:1px solid #999; padding:4px;">-(-NHCOO-)ₙ-</td><td style="border:1px solid #999; padding:4px;">成品</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>CPU</b></td><td style="border:1px solid #999; padding:4px;">浇注型聚氨酯</td><td style="border:1px solid #999; padding:4px;">Cast Polyurethane</td><td style="border:1px solid #999; padding:4px;">成品</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>N₂</b></td><td style="border:1px solid #999; padding:4px;">氮气</td><td style="border:1px solid #999; padding:4px;">N₂ 99.999% 露点-40°C</td><td style="border:1px solid #999; padding:4px;">惰性气体（窒息风险）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>CW</b></td><td style="border:1px solid #999; padding:4px;">循环冷冻水</td><td style="border:1px solid #999; padding:4px;">H₂O 5°C/20°C</td><td style="border:1px solid #999; padding:4px;">—</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>HO</b></td><td style="border:1px solid #999; padding:4px;">导热油（热传导油）</td><td style="border:1px solid #999; padding:4px;">氢化三联苯类</td><td style="border:1px solid #999; padding:4px;">可燃（闪点>180°C）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>VAC</b></td><td style="border:1px solid #999; padding:4px;">真空（真空排气）</td><td style="border:1px solid #999; padding:4px;">5-100 mbar</td><td style="border:1px solid #999; padding:4px;">含 TDI/DETDA 蒸汽</td></tr>
+</table>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（2）流股代号（S-XXX 流股编号）</p>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;"><th style="border:1px solid #999; padding:4px;">流股代号</th><th style="border:1px solid #999; padding:4px;">介质</th><th style="border:1px solid #999; padding:4px;">路径</th><th style="border:1px solid #999; padding:4px;">流量</th></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>S-101</b></td><td style="border:1px solid #999; padding:4px;">PTMG</td><td style="border:1px solid #999; padding:4px;">V-101 → P-101 → V-201</td><td style="border:1px solid #999; padding:4px;">0.5 m³/h</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>S-102</b></td><td style="border:1px solid #999; padding:4px;">TDI（N₂ 压料）</td><td style="border:1px solid #999; padding:4px;">V-102 → R-301</td><td style="border:1px solid #999; padding:4px;">0.1 m³/h</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>S-103</b></td><td style="border:1px solid #999; padding:4px;">DETDA（液体）</td><td style="border:1px solid #999; padding:4px;">V-103 → P-501 → MX-601</td><td style="border:1px solid #999; padding:4px;">0.05 m³/h</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>S-201</b></td><td style="border:1px solid #999; padding:4px;">合格 PTMG</td><td style="border:1px solid #999; padding:4px;">V-201 → P-201 → R-301</td><td style="border:1px solid #999; padding:4px;">0.5 m³/h</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>S-301</b></td><td style="border:1px solid #999; padding:4px;">预聚体</td><td style="border:1px solid #999; padding:4px;">R-301 → P-301 → V-401</td><td style="border:1px solid #999; padding:4px;">0.5 m³/h</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>S-401</b></td><td style="border:1px solid #999; padding:4px;">脱气预聚体</td><td style="border:1px solid #999; padding:4px;">V-401 → P-401 → MX-601</td><td style="border:1px solid #999; padding:4px;">0.5 m³/h</td></tr>
+</table>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（3）设备代号（HG/T 20505 工艺设备位号编制规则）</p>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;"><th style="border:1px solid #999; padding:4px;">第一字母</th><th style="border:1px solid #999; padding:4px;">设备类型</th><th style="border:1px solid #999; padding:4px;">第一字母</th><th style="border:1px solid #999; padding:4px;">设备类型</th></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>V</b></td><td style="border:1px solid #999; padding:4px;">容器（Vessel）储罐/反应器/罐</td><td style="border:1px solid #999; padding:4px;"><b>P</b></td><td style="border:1px solid #999; padding:4px;">泵（Pump）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>R</b></td><td style="border:1px solid #999; padding:4px;">反应器（Reactor）</td><td style="border:1px solid #999; padding:4px;"><b>C</b></td><td style="border:1px solid #999; padding:4px;">压缩机/冷却塔（Compressor/Column）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>T</b></td><td style="border:1px solid #999; padding:4px;">塔（Tower）</td><td style="border:1px solid #999; padding:4px;"><b>E</b></td><td style="border:1px solid #999; padding:4px;">换热器/加热炉（Exchanger）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>M</b></td><td style="border:1px solid #999; padding:4px;">混合器（Mixer）</td><td style="border:1px solid #999; padding:4px;"><b>O</b></td><td style="border:1px solid #999; padding:4px;">真空泵（Onderdruk 真空）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>X</b></td><td style="border:1px solid #999; padding:4px;">焚烧炉/废气处理</td><td style="border:1px solid #999; padding:4px;"><b>Q</b></td><td style="border:1px solid #999; padding:4px;">在线分析仪（Quality）</td></tr>
+</table>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（4）阀门代号（GB/T 2625 / ISA-S5.1 阀门标识）</p>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;"><th style="border:1px solid #999; padding:4px;">代号</th><th style="border:1px solid #999; padding:4px;">阀门类型</th><th style="border:1px solid #999; padding:4px;">英文</th><th style="border:1px solid #999; padding:4px;">代号</th><th style="border:1px solid #999; padding:4px;">阀门类型</th><th style="border:1px solid #999; padding:4px;">英文</th></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>Z</b></td><td style="border:1px solid #999; padding:4px;">截止阀</td><td style="border:1px solid #999; padding:4px;">Globe Valve</td><td style="border:1px solid #999; padding:4px;"><b>FCV</b></td><td style="border:1px solid #999; padding:4px;">流量调节阀</td><td style="border:1px solid #999; padding:4px;">Flow Control Valve</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>XV</b></td><td style="border:1px solid #999; padding:4px;">紧急切断阀</td><td style="border:1px solid #999; padding:4px;">Emergency Shutdown</td><td style="border:1px solid #999; padding:4px;"><b>PCV</b></td><td style="border:1px solid #999; padding:4px;">压力调节阀</td><td style="border:1px solid #999; padding:4px;">Pressure Control Valve</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>ZV</b></td><td style="border:1px solid #999; padding:4px;">真空阀</td><td style="border:1px solid #999; padding:4px;">Vacuum Valve</td><td style="border:1px solid #999; padding:4px;"><b>LCV</b></td><td style="border:1px solid #999; padding:4px;">液位调节阀</td><td style="border:1px solid #999; padding:4px;">Level Control Valve</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>PSV</b></td><td style="border:1px solid #999; padding:4px;">压力安全阀</td><td style="border:1px solid #999; padding:4px;">Pressure Safety Valve</td><td style="border:1px solid #999; padding:4px;"><b>TCV</b></td><td style="border:1px solid #999; padding:4px;">温度调节阀</td><td style="border:1px solid #999; padding:4px;">Temperature Control Valve</td></tr>
+</table>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（5）仪表代号（ISA-S5.1 仪表功能代号）</p>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;"><th style="border:1px solid #999; padding:4px;">第一位字母</th><th style="border:1px solid #999; padding:4px;">测量变量</th><th style="border:1px solid #999; padding:4px;">后续字母</th><th style="border:1px solid #999; padding:4px;">仪表功能</th></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>T</b></td><td style="border:1px solid #999; padding:4px;">温度 Temperature</td><td style="border:1px solid #999; padding:4px;"><b>I</b></td><td style="border:1px solid #999; padding:4px;">指示 Indication</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>P</b></td><td style="border:1px solid #999; padding:4px;">压力 Pressure</td><td style="border:1px solid #999; padding:4px;"><b>R</b></td><td style="border:1px solid #999; padding:4px;">记录 Recording</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>F</b></td><td style="border:1px solid #999; padding:4px;">流量 Flow</td><td style="border:1px solid #999; padding:4px;"><b>C</b></td><td style="border:1px solid #999; padding:4px;">控制 Control</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>L</b></td><td style="border:1px solid #999; padding:4px;">液位 Level</td><td style="border:1px solid #999; padding:4px;"><b>A</b></td><td style="border:1px solid #999; padding:4px;">报警 Alarm</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>A</b></td><td style="border:1px solid #999; padding:4px;">分析 Analysis</td><td style="border:1px solid #999; padding:4px;"><b>S</b></td><td style="border:1px solid #999; padding:4px;">开关 Switch</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>Q</b></td><td style="border:1px solid #999; padding:4px;">质量 Quality</td><td style="border:1px solid #999; padding:4px;"><b>T</b></td><td style="border:1px solid #999; padding:4px;">变送 Transmit</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>H/HH</b></td><td style="border:1px solid #999; padding:4px;">高/高高限位</td><td style="border:1px solid #999; padding:4px;"><b>L/LL</b></td><td style="border:1px solid #999; padding:4px;">低/低低限位</td></tr>
+</table>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（6）管路代号（GB/T 6567.2 管路标识）</p>
+<table style="font-family:SimHei; font-size:10px; border-collapse:collapse; width:100%; margin:6px 0;">
+<tr style="background:#FFE0B2;"><th style="border:1px solid #999; padding:4px;">代号</th><th style="border:1px solid #999; padding:4px;">管路类型</th><th style="border:1px solid #999; padding:4px;">代号</th><th style="border:1px solid #999; padding:4px;">管路类型</th></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>主工艺（黑实线）</b></td><td style="border:1px solid #999; padding:4px;">物料管路（粗实线 2.5px）</td><td style="border:1px solid #999; padding:4px;"><b>VAC（黑虚线）</b></td><td style="border:1px solid #999; padding:4px;">真空管路（点划线）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>N₂（绿虚线）</b></td><td style="border:1px solid #999; padding:4px;">氮气管路（绿色虚线）</td><td style="border:1px solid #999; padding:4px;"><b>信号线（橙虚线）</b></td><td style="border:1px solid #999; padding:4px;">仪表信号线（橙色虚线 1px）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>CW（蓝实线）</b></td><td style="border:1px solid #999; padding:4px;">冷冻水管路（蓝色实线 2.5px）</td><td style="border:1px solid #999; padding:4px;"><b>CW 回（蓝虚线）</b></td><td style="border:1px solid #999; padding:4px;">冷冻水返回（蓝色虚线 2.5px）</td></tr>
+<tr><td style="border:1px solid #999; padding:4px;"><b>HO（橙实线）</b></td><td style="border:1px solid #999; padding:4px;">导热油管路（橙色实线 2.5px）</td><td style="border:1px solid #999; padding:4px;"><b>HO 回（橙虚线）</b></td><td style="border:1px solid #999; padding:4px;">导热油返回（橙色虚线 2.5px）</td></tr>
+</table>
+
+<p style="margin:6px 0;font-size:11px;line-height:1.6;font-weight:bold;color:#0d47a1;">（7）S-XXX 流股编号规则</p>
+<p style="margin:4px 0;font-size:10px;line-height:1.6;">
+S-XXX 第一位数字 = 单元号（1=100 原料储存, 2=200 脱水, 3=300 预聚, 4=400 脱气, 5=500 MOCA 取消, 6=600 混合浇注, 7=700 后熟化）<br>
+S-101/201/301/401/501/601 = 100/200/300/400/500/600 单元内的第 N 个流股
+</p>
+
+<h3 style="margin:12px 0 6px 0;color:#E65100;font-size:13px;">备注 4：6 台工艺泵 + 2 台真空泵 汇总（齿轮泵/柱塞泵选型）</h3>
+<p style="margin:4px 0;font-size:11px;line-height:1.6;">
+• <b>P-101</b> V-101→V-201 PTMG <b>齿轮泵</b> 0.5m³/h 10m 0.75kW 304SS 60°C ｜ <b>P-201</b> V-201→R-301 PTMG <b>齿轮泵</b> 0.5m³/h 10m 0.75kW 304SS 120°C<br>
+• <b>P-301</b> R-301→V-401 预聚体 <b>齿轮泵(高粘度)</b> 0.5m³/h 10m 1.5kW 304SS 80°C ｜ <b>P-401</b> V-401→MX-601 <b>齿轮泵</b> 0.5m³/h 15m 1.5kW 304SS 80°C<br>
+• <b>P-501</b> V-103→MX-601 DETDA 投料 <b>齿轮泵</b> 0.05m³/h 10m 0.37kW 304SS 25°C ｜ <b>P-601</b> MX-601→P-601 浇注 <b>柱塞计量泵</b> 0.6m³/h 5bar 1.5kW 316L 80°C<br>
+• <b>TDI (V-102→R-301) N₂ 压料</b> 不用泵 ｜ <b>O-201/O-401</b> 真空泵（旋片+罗茨 5~100 mbar）<br>
+• <b>选型原则</b>：齿轮泵（流量稳定 + 高粘度适用 + 价格低）→ P-101/201/301/401/501；柱塞计量泵（精确计量 + 高压）→ P-601（浇注必须）
+</p>
+
+</div>
+
+<div style="background:#0d47a1;color:#fff;padding:8px 20px;font-size:11px;">
+<table style="width:100%;color:#fff;font-size:11px;">
+<tr>
+<td style="padding:4px;">项目：DETDA 法 PU 弹性体中试装置</td>
+<td style="padding:4px;">图号：PID-001-Sht1of1</td>
+<td style="padding:4px;">出图规范：v6.7 (S-401 接 MX-601 / 仪表实线 tap / 信号线按系统分离+竖线错开 / 13 阀门全注)</td>
+<td style="padding:4px;text-align:right;">2026-06-23</td>
+</tr>
+</table>
+</div>
+
+</body>
+</html>
