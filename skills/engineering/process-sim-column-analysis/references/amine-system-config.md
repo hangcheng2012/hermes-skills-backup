@@ -173,7 +173,112 @@ Reactions → New → Type: LHHW
 **设计院项目**：Aspen Plus ELECNRTL + LHHW → 严谨动力学 → 出设计文件
 **特殊配方 / 新胺液**：Aspen Plus → 完全自定义 → 文献查参数
 
-## 五、女王 T-101 实战诊断（07-18 实际遇到）
+### HYSYSAcid Gas 模块的 Efficiency vs Advanced Modeling（女王 09-01 关键发现）
+
+**AspenTech 官方 Jump Start Guide（AT-03943-0318, 2018）原文**：
+
+> "The 'Efficiency' option is the one most commonly used; it is a highly rigorous method that uses rate-based calculations in the background to calculate stage efficiencies of H2S and CO2, and then uses these values to solve the column."
+
+Acid Gas 包内部有两种建模选项：
+
+| 选项 | 工作机制 | 速度 | 精度 | 适用场景 |
+|---|---|---|---|---|
+| **Efficiency**（默认） | 内部 rate-based 算 H2S/CO2 的 component efficiency → 用算出的 efficiency 求解整塔 | 快 | 工业级 | **工艺设计、塔盘水力学、vendor 出图（推荐）** |
+| **Advanced Modeling** | 全塔 rate-based（每块板按双膜理论算传质 + 反应） | 慢 | 研究级 | 反标工厂数据、研究验证
+
+**核心：Acid Gas 包默认用 Component 模式（不是 Overall 模式）**
+
+- **改 Overall 效率对 H2S/CO2 component efficiency 无影响**（cheresources 论坛 Ceng 2013 年困惑的根因）
+- Acid Gas 包内部直接用 rate-based 算 H2S/CO2 的 component efficiency，绕过 Overall 字段
+- 所以 **Overall 全塔效率 0.3-0.45 在 Acid Gas 胺液塔里不适用**——必须按组分查 H2S/CO2 的 component efficiency
+
+**等效理论板换算（女王 09-01 命题）**：
+
+> N_理论_H2S = N_实际 × η_H2S
+>
+> N_理论_CO2 = N_实际 × η_CO2
+
+**条件**：所有板上 η 一致时简化成立（女王 T-100 截图：H2S 在 7 块板上都是 0.750）。不同板 η 不同时不能直接乘，要 HYSYS 内部逐板算或按对数平均。
+
+### H₂S 实际工程 component efficiency 典型值
+
+| 来源 | η_H2S | η_CO2 | 说明 |
+|---|---|---|---|
+| **HYSYS Acid Gas 自动算出** | 0.4-0.8（取决于工况） | 0.05-0.25 | T-100 截图：H2S=0.75, CO2=0.15 |
+| Mahdipoor 2024 论文（AGE 塔） | 4.1% | 21.4% | 极端工况，极低效率 |
+| Aspen Plus 典型范围 | 0.5-0.8 | 0.1-0.3 | 工业设计参考 |
+| 经验值（cheresources Dacs 2009） | 0.30-0.45 Overall | — | **整塔加权，Acid Gas 塔不适用** |
+
+### Overall 模式 vs Component 模式（清晰对照）
+
+| 模式 | 效率设值 | 适用场景 | Acid Gas 包是否用？ |
+|---|---|---|---|
+| **Overall**（全塔统一） | 一个效率值（如 0.35），所有组分、所有板共用 | 简单精馏塔 | **否**（被绕过） |
+| **Component**（按组分）⭐ | 每个组分在不同板上效率独立 | **化学吸收塔（Acid Gas 胺液塔）** | **是（默认）** |
+
+**为什么 amine 塔必须用 Component 模式**：H2S 在 MDEA 中是质子瞬时反应（效率高，0.5-0.8），CO2 在 MDEA 中是慢反应（效率低，0.1-0.3）—— 用 Overall 一个数（如 0.35）物理上不准确。Component 模式反映这个本质差异。
+
+---
+
+## 五、Number of Stages 字段的核心坑（Murphree 输入模式切换）
+
+### 核心结论（女王 09-01 明确要求固化）
+
+**理论板数 ≠ 实际板数，即使填了 Murphree efficiency，两者也不相等。**
+
+HYSYS 的 "Number of Stages" 字段在两种模式下含义不同：
+
+| 模式 | Number of Stages 含义 | Murphree 字段 |
+|---|---|---|
+| **不填 Murphree**（默认 100%） | **理论板数**（每块板都是理想平衡级） | 默认 100%，可不动 |
+| **填了 Murphree efficiency** | **实际物理板数**（HYSYS 用 Murphree 公式修正每块板的平衡） | 按现场效率填 |
+
+**换算关系（最朴素写法）**：
+
+> N_理论 = N_实际 × η
+
+> N_实际 = N_理论 ÷ η
+
+其中 η 是单板效率（Murphree）。
+
+**举例**：胺法脱 H₂S 吸收塔，板效率 30%，实际板 30 块 → 理论板 = 30 × 0.30 = 9 块。
+
+### 两种做法的对比
+
+| 做法 | Number of Stages | Murphree | 适用场景 |
+|---|---|---|---|
+| **做法 A**（推荐设计用） | 填理论板数 | 不填（默认 100%） | 工艺设计、塔盘水力学、vendor 出图 |
+| **做法 B** | 填实际板数 | 填现场效率 | 反标工厂实际数据、现场标定 |
+
+### 关键陷阱：塔盘水力学必须用理论板
+
+工业论坛老专家（50 年经验的 Bobby Strain、HYSYS 高手 colt16）的一致意见：
+
+> 塔板水力学计算（vendor 做塔盘设计用的 loadings），永远用理论板，不能用实际板。
+
+填了 Murphree 后，HYSYS 算出的回流比、热负荷都会比纯理论板方案**偏低**（因为实际板数更多），拿这数给 vendor 会误判塔径。
+
+### H₂S 吸收塔的板效率典型值
+
+| 塔型 | 单板 Murphree 效率典型值 |
+|---|---|
+| 普通精馏塔（汽-液） | 60-80% |
+| **胺法脱硫吸收塔**（化学吸收） | **25-50%** |
+| H₂S 化学吸收段（贫液上部） | 10-25%（极低） |
+| H₂S 富液段（接近饱和） | 30-50% |
+
+原因：化学吸收有反应阻力 + 传质阻力双重影响，比物理平衡的精馏效率差很多。胺法塔典型 30-50 块实际板，按 30% 效率算下来也就 10-15 块理论板。
+
+### 推荐工作流（女王做模拟时）
+
+1. **按理论板建模**：Number of Stages = 工艺计算的理论板数，Murphree 不填（默认 100%）
+2. **收敛后**检查回流比、热负荷、塔顶塔底组成是否合理
+3. **如需对标工厂实测数据**，切到做法 B（实际板数 + Murphree）—— Murphree 必须从工厂实测反算
+4. **塔盘 vendor 出图永远基于理论板**（做法 A 的结果）
+
+---
+
+## 六、女王 T-101 实战诊断（07-18 实际遇到）
 
 **问题清单：**
 1. 顶部温度黄高亮 25.99°C → **未收敛**
